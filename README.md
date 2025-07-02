@@ -179,6 +179,33 @@ Change the toggle combinations in the "System toggle controls" section.
 - **Variables**: Uses `windows_mapping_enabled` to control activation
 - **Compatibility**: Tested on macOS with built-in MacBook keyboards
 
+## Project Structure
+
+```
+ke-custom/
+├── karabiner.json              # Main Karabiner Elements configuration
+├── README.md                   # This file - installation and usage guide
+├── karabiner-elements-plan.md  # Detailed development plan and specifications
+├── docs/                       # Documentation and development logs
+│   └── chats/                  # AI conversation logs from development sessions
+│       ├── README.md           # Chat logging system documentation
+│       └── *.md                # Individual conversation exports
+├── scripts/                    # Helper scripts
+│   └── add-chat-log.sh        # Script to create new chat log entries
+└── .gitignore                 # Git ignore rules
+```
+
+## Development Logs
+
+This project maintains detailed logs of AI-assisted development sessions in [`docs/chats/`](./docs/chats/). These logs provide:
+
+- **Context** for design decisions and implementation choices
+- **Troubleshooting history** for common issues
+- **Evolution** of the configuration over time
+- **Reference** for future enhancements
+
+To add a new chat log: `./scripts/add-chat-log.sh "topic-description" "ai-assistant"`
+
 ## Contributing
 
 Feel free to submit issues or pull requests for:
@@ -186,6 +213,7 @@ Feel free to submit issues or pull requests for:
 - App-specific configurations  
 - Bug fixes
 - Documentation improvements
+- Development process enhancements
 
 ## License
 
