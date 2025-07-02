@@ -34,4 +34,7 @@ Temporary Items
 .idea/
 
 # Logs
-*.log 
+*.log
+
+# Temporary chat exports (processed by script)
+docs/chats/exported/ 
