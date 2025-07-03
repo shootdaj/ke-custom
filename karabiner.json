@@ -67,7 +67,7 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + Tab → Enable tab switching mode and send Control+Tab",
+                                "description": "fn + Tab → Control + Tab (simple mapping)",
                                 "from": {
                                     "key_code": "tab",
                                     "modifiers": {
@@ -76,37 +76,10 @@
                                 },
                                 "to": [
                                     {
-                                        "set_variable": {
-                                            "name": "tab_switching_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
                                         "key_code": "tab",
                                         "modifiers": ["control"]
                                     }
                                 ],
-                                "to_delayed_action": {
-                                    "to_if_invoked": [
-                                        {
-                                            "set_variable": {
-                                                "name": "tab_switching_mode",
-                                                "value": 0
-                                            }
-                                        }
-                                    ],
-                                    "to_if_canceled": [
-                                        {
-                                            "set_variable": {
-                                                "name": "tab_switching_mode",
-                                                "value": 0
-                                            }
-                                        }
-                                    ]
-                                },
-                                "parameters": {
-                                    "basic.to_delayed_action_delay_milliseconds": 1000
-                                },
                                 "type": "basic"
                             },
                             {
@@ -117,7 +90,7 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + Shift + Tab → Enable tab switching mode and send Control+Shift+Tab",
+                                "description": "fn + Shift + Tab → Control + Shift + Tab (simple mapping)",
                                 "from": {
                                     "key_code": "tab",
                                     "modifiers": {
@@ -126,37 +99,10 @@
                                 },
                                 "to": [
                                     {
-                                        "set_variable": {
-                                            "name": "tab_switching_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
                                         "key_code": "tab",
                                         "modifiers": ["control", "shift"]
                                     }
                                 ],
-                                "to_delayed_action": {
-                                    "to_if_invoked": [
-                                        {
-                                            "set_variable": {
-                                                "name": "tab_switching_mode",
-                                                "value": 0
-                                            }
-                                        }
-                                    ],
-                                    "to_if_canceled": [
-                                        {
-                                            "set_variable": {
-                                                "name": "tab_switching_mode",
-                                                "value": 0
-                                            }
-                                        }
-                                    ]
-                                },
-                                "parameters": {
-                                    "basic.to_delayed_action_delay_milliseconds": 1000
-                                },
                                 "type": "basic"
                             },
                             {
@@ -165,44 +111,19 @@
                                         "name": "windows_mapping_enabled",
                                         "type": "variable_if",
                                         "value": 1
-                                    },
-                                    {
-                                        "name": "tab_switching_mode",
-                                        "type": "variable_if",
-                                        "value": 1
                                     }
                                 ],
-                                "description": "Tab in tab switching mode → Send Control+Tab and extend timer",
+                                "description": "Right Option + Left Arrow → Option + Left Arrow (word skip left)",
                                 "from": {
-                                    "key_code": "tab"
+                                    "key_code": "left_arrow",
+                                    "modifiers": { "mandatory": ["right_option"] }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "tab",
-                                        "modifiers": ["control"]
+                                        "key_code": "left_arrow",
+                                        "modifiers": ["option"]
                                     }
                                 ],
-                                "to_delayed_action": {
-                                    "to_if_invoked": [
-                                        {
-                                            "set_variable": {
-                                                "name": "tab_switching_mode",
-                                                "value": 0
-                                            }
-                                        }
-                                    ],
-                                    "to_if_canceled": [
-                                        {
-                                            "set_variable": {
-                                                "name": "tab_switching_mode",
-                                                "value": 0
-                                            }
-                                        }
-                                    ]
-                                },
-                                "parameters": {
-                                    "basic.to_delayed_action_delay_milliseconds": 1000
-                                },
                                 "type": "basic"
                             },
                             {
@@ -211,49 +132,85 @@
                                         "name": "windows_mapping_enabled",
                                         "type": "variable_if",
                                         "value": 1
-                                    },
+                                    }
+                                ],
+                                "description": "Right Option + Right Arrow → Option + Right Arrow (word skip right)",
+                                "from": {
+                                    "key_code": "right_arrow",
+                                    "modifiers": { "mandatory": ["right_option"] }
+                                },
+                                "to": [
                                     {
-                                        "name": "tab_switching_mode",
+                                        "key_code": "right_arrow",
+                                        "modifiers": ["option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "windows_mapping_enabled",
                                         "type": "variable_if",
                                         "value": 1
                                     }
                                 ],
-                                "description": "Shift+Tab in tab switching mode → Send Control+Shift+Tab and extend timer",
+                                "description": "Right Option + Shift + Left Arrow → Option + Shift + Left Arrow (word select left)",
                                 "from": {
-                                    "key_code": "tab",
-                                    "modifiers": {
-                                        "mandatory": ["shift"]
-                                    }
+                                    "key_code": "left_arrow",
+                                    "modifiers": { "mandatory": ["right_option", "shift"] }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "tab",
-                                        "modifiers": ["control", "shift"]
+                                        "key_code": "left_arrow",
+                                        "modifiers": ["option", "shift"]
                                     }
                                 ],
-                                "to_delayed_action": {
-                                    "to_if_invoked": [
-                                        {
-                                            "set_variable": {
-                                                "name": "tab_switching_mode",
-                                                "value": 0
-                                            }
-                                        }
-                                    ],
-                                    "to_if_canceled": [
-                                        {
-                                            "set_variable": {
-                                                "name": "tab_switching_mode",
-                                                "value": 0
-                                            }
-                                        }
-                                    ]
-                                },
-                                "parameters": {
-                                    "basic.to_delayed_action_delay_milliseconds": 1000
-                                },
                                 "type": "basic"
                             },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "windows_mapping_enabled",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Right Option + Shift + Right Arrow → Option + Shift + Right Arrow (word select right)",
+                                "from": {
+                                    "key_code": "right_arrow",
+                                    "modifiers": { "mandatory": ["right_option", "shift"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": ["option", "shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "windows_mapping_enabled",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Right Option + Backspace → Option + Backspace (delete previous word)",
+                                "from": {
+                                    "key_code": "delete_or_backspace",
+                                    "modifiers": { "mandatory": ["right_option"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": ["option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+
 
                             {
                                 "conditions": [
@@ -929,6 +886,27 @@
                                     }
                                 ],
                                 "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "windows_mapping_enabled",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "fn + Backspace → Option + Backspace (delete previous word)",
+                                "from": {
+                                    "key_code": "delete_or_backspace",
+                                    "modifiers": { "mandatory": ["fn"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": ["option"]
+                                    }
+                                ],
+                                                                "type": "basic"
                             }
                         ]
                     },
@@ -2208,23 +2186,7 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [{ "key_code": "left_command" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "windows_mapping_enabled",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "Right Option → Right Command (Windows Meta equivalent)",
-                                "from": {
-                                    "key_code": "right_option",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [{ "key_code": "right_command" }],
-                                "type": "basic"
+                                                                "type": "basic"
                             }
                         ]
                     }

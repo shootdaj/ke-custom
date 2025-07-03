@@ -8,8 +8,9 @@ This Karabiner Elements configuration remaps your MacBook's modifier keys to mim
 
 - **`fn` key** → Acts as **Windows Ctrl** (Mac Command) for ALL shortcuts
 - **`Cmd` key** → Acts as **Windows Alt** (Mac Option) 
-- **`Option` keys** → Act as **Windows Meta/Super** (Mac Command) for window management
-- **`Control` key** → Acts as **Windows Fn** for navigation (word skipping, etc.)
+- **`Left Option` key** → Acts as **Windows Meta/Super** (Mac Command) for window management
+- **`Right Option` key** → Acts as **Windows Ctrl** for navigation (word skipping, backspace)
+- **`Control` key** → Acts as **Windows Fn** for navigation (line start/end, page up/down)
 
 ## Key Features
 
@@ -84,6 +85,10 @@ fn + Z → Ctrl + Z (suspend process)
 ### ✅ **Developer Navigation (Perfect for VSCode/Cursor)**
 - `fn + Left/Right Arrow` → Word skipping
 - `fn + Shift + Left/Right Arrow` → Word selection
+- `Right Option + Left/Right Arrow` → Word skipping
+- `Right Option + Shift + Left/Right Arrow` → Word selection
+- `fn + Backspace` → Delete previous word
+- `Right Option + Backspace` → Delete previous word
 - `Control + Left/Right Arrow` → Line start/end
 - `Control + Shift + Left/Right Arrow` → Line start/end with selection
 - `Control + Up/Down Arrow` → Page up/down
@@ -91,16 +96,15 @@ fn + Z → Ctrl + Z (suspend process)
 - `fn + Control + Left/Right Arrow` → Document start/end
 - `fn + Control + Shift + Left/Right Arrow` → Document start/end with selection
 
-### ✅ **Tab Management (Windows-Style Continuous Navigation)**
-- `fn + Tab` → Opens tab switcher and navigates forward (initiates tab switching mode)
-- `fn + Shift + Tab` → Opens tab switcher and navigates backward (initiates tab switching mode)
-- **Enhanced Windows-style behavior**: 
-  - First `fn + Tab` opens the tab menu and moves to first item
-  - Additional `Tab` presses (without `fn`) continue navigating forward
-  - Additional `Shift + Tab` presses navigate backward  
-  - **1-second timeout**: Menu automatically selects current item after 1 second of inactivity
-  - **Timer reset**: Each navigation press resets the 1-second timer
-  - Enables rapid tab navigation: `fn + Tab`, then quick `Tab Tab Tab` to move multiple tabs
+### ✅ **Tab Management (Simple Reliable Mapping)**
+- `fn + Tab` → `Control + Tab` (single tab switch forward)
+- `fn + Shift + Tab` → `Control + Shift + Tab` (single tab switch backward)
+- **Simple and reliable**: Direct one-to-one mapping that preserves other fn key functionality
+- **Benefits**: 
+  - Works consistently across all applications
+  - No interference with other fn key combinations (fn + backspace, etc.)
+  - Reliable single-press tab switching
+  - Maintains all existing keyboard functionality
 
 ### ✅ **Shift Variant Support**
 Every mapping automatically supports shift combinations:
@@ -220,6 +224,10 @@ Since Option keys now act as Command keys, update your BetterTouchTool shortcuts
 |------------------|-------------------------|---------|
 | `Ctrl + Left` | `fn + Left` | Word skip left |
 | `Ctrl + Right` | `fn + Right` | Word skip right |
+| `Ctrl + Left` | `Right Option + Left` | Word skip left |
+| `Ctrl + Right` | `Right Option + Right` | Word skip right |
+| `Ctrl + Backspace` | `fn + Backspace` | Delete previous word |
+| `Ctrl + Backspace` | `Right Option + Backspace` | Delete previous word |
 | `Home` | `Control + Left` | Line start |
 | `End` | `Control + Right` | Line end |
 | `Ctrl + Home` | `fn + Control + Left` | Document start |
@@ -228,6 +236,8 @@ Since Option keys now act as Command keys, update your BetterTouchTool shortcuts
 | `Page Down` | `Control + Down` | Page down |
 | `Ctrl + Shift + Left` | `fn + Shift + Left` | Select word left |
 | `Ctrl + Shift + Right` | `fn + Shift + Right` | Select word right |
+| `Ctrl + Shift + Left` | `Right Option + Shift + Left` | Select word left |
+| `Ctrl + Shift + Right` | `Right Option + Shift + Right` | Select word right |
 | `Shift + Home` | `Control + Shift + Left` | Select to line start |
 | `Shift + End` | `Control + Shift + Right` | Select to line end |
 | `Ctrl + Shift + Home` | `fn + Control + Shift + Left` | Select to document start |
@@ -289,12 +299,12 @@ Since Option keys now act as Command keys, update your BetterTouchTool shortcuts
 - Check if you're using a different terminal app (add its bundle identifier to the config)
 
 ### Tab Switching Behavior
-The tab switching functionality works very close to Windows behavior:
-- **Working**: `fn + Tab` opens switcher and navigates forward
-- **Working**: Additional `Tab` presses continue navigation  
-- **Working**: 1-second timer auto-selects highlighted item
-- **Known Issue**: Pressing `Shift` during navigation currently closes the menu instead of navigating backward
-- **Workaround**: Use `fn + Shift + Tab` to start backward navigation, then use `Tab` to go forward
+The tab switching functionality uses **simple reliable mapping**:
+- **Working**: `fn + Tab` → `Control + Tab` (single switch forward)
+- **Working**: `fn + Shift + Tab` → `Control + Shift + Tab` (single switch backward)
+- **Reliable**: Direct one-to-one mapping with no complex state management
+- **Compatible**: Works consistently across all applications without interference
+- **Note**: This provides reliable single-press tab switching. For Windows-style continuous navigation, macOS's tab switcher behavior fundamentally requires physical modifier key holds that are difficult to simulate reliably with Karabiner Elements
 
 ### Finding App Bundle Identifiers
 ```bash
@@ -341,7 +351,9 @@ ke-custom/
 ├── karabiner.json              # Main Karabiner Elements configuration
 ├── README.md                   # This file - installation and usage guide
 ├── docs/                       # Documentation and development logs
-│   ├── karabiner-elements-plan.md  # Detailed development plan and specifications
+│   ├── karabiner-elements-plan.md     # Detailed development plan and specifications
+│   ├── karabiner-technical-learnings.md # Technical insights and best practices
+│   ├── tab-switching-progress-report.md # Detailed tab switching implementation history
 │   └── chats/                  # AI conversation logs from development sessions
 │       ├── README.md           # Chat logging system documentation
 │       └── *.md                # Individual conversation exports
@@ -357,6 +369,17 @@ The [`docs/`](./docs/) folder contains comprehensive documentation for this proj
 
 ### Development Plan
 - [`docs/karabiner-elements-plan.md`](./docs/karabiner-elements-plan.md) - Detailed technical specifications, development roadmap, and design decisions
+
+### Technical Learnings
+- [`docs/karabiner-technical-learnings.md`](./docs/karabiner-technical-learnings.md) - Technical insights, best practices, and lessons learned including:
+  - **Rule processing fundamentals** and priority handling
+  - **Common pitfalls** and how to avoid them
+  - **Best practices** for rule organization and design patterns
+  - **Real-world examples** and debugging techniques
+  - **Future development guidelines** for adding new features
+
+### Implementation History
+- [`docs/tab-switching-progress-report.md`](./docs/tab-switching-progress-report.md) - Detailed history of Windows-style tab switching implementation attempts
 
 ### Development Logs  
 - [`docs/chats/`](./docs/chats/) - AI-assisted development session logs that provide:
