@@ -294,6 +294,18 @@ Since Option keys now act as Command keys, update your BetterTouchTool shortcuts
 - Function keys (F1-F12) should work normally with `fn` modifier
 - If not working, check System Preferences → Keyboard → "Use F1, F2, etc. keys as standard function keys"
 
+### Caps Lock LED Not Working
+- The configuration includes proper Caps Lock LED control (`manipulate_caps_lock_led: true`)
+- This ensures the Caps Lock indicator light functions normally
+- The fn key should work properly after pressing Caps Lock
+- If still experiencing issues, restart Karabiner Elements or reload the configuration
+
+### fn Key Not Working When Caps Lock is Active
+- **Fixed in latest version**: All fn key mappings now include `caps_lock` as an optional modifier
+- This resolves the issue where fn key combinations don't work when Caps Lock is enabled
+- The fix addresses Karabiner Elements 15.1.0+ breaking changes related to Caps Lock accidental keystroke prevention
+- All 47 fn key mappings have been updated to work seamlessly with Caps Lock in any state
+
 ### Terminal Shortcuts Not Working
 - Verify Terminal.app and Warp bundle identifiers are correct
 - Check if you're using a different terminal app (add its bundle identifier to the config)

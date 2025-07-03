@@ -10,7 +10,14 @@
                                 "description": "fn + Control + Option + Command + E: Enable Windows mapping",
                                 "from": {
                                     "key_code": "e",
-                                    "modifiers": { "mandatory": ["fn", "control", "option", "command"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn",
+                                            "control",
+                                            "option",
+                                            "command"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
@@ -34,7 +41,14 @@
                                 "description": "fn + Control + Option + Command + D: Disable Windows mapping",
                                 "from": {
                                     "key_code": "d",
-                                    "modifiers": { "mandatory": ["fn", "control", "option", "command"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn",
+                                            "control",
+                                            "option",
+                                            "command"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
@@ -57,7 +71,7 @@
                         ]
                     },
                     {
-                                                "description": "Windows-to-Mac: fn key special cases (highest priority)",
+                        "description": "Windows-to-Mac: fn key special cases (highest priority)",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -67,17 +81,24 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + Tab → Control + Tab (simple mapping)",
+                                "description": "fn + Tab \u2192 Control + Tab (simple mapping)",
                                 "from": {
                                     "key_code": "tab",
                                     "modifiers": {
-                                        "mandatory": ["fn"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "tab",
-                                        "modifiers": ["control"]
+                                        "modifiers": [
+                                            "control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -90,17 +111,26 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + Shift + Tab → Control + Shift + Tab (simple mapping)",
+                                "description": "fn + Shift + Tab \u2192 Control + Shift + Tab (simple mapping)",
                                 "from": {
                                     "key_code": "tab",
                                     "modifiers": {
-                                        "mandatory": ["fn", "shift"]
+                                        "mandatory": [
+                                            "fn",
+                                            "shift"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "tab",
-                                        "modifiers": ["control", "shift"]
+                                        "modifiers": [
+                                            "control",
+                                            "shift"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -113,15 +143,21 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "Right Option + Left Arrow → Option + Left Arrow (word skip left)",
+                                "description": "Right Option + Left Arrow \u2192 Option + Left Arrow (word skip left)",
                                 "from": {
                                     "key_code": "left_arrow",
-                                    "modifiers": { "mandatory": ["right_option"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "left_arrow",
-                                        "modifiers": ["option"]
+                                        "modifiers": [
+                                            "option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -134,15 +170,21 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "Right Option + Right Arrow → Option + Right Arrow (word skip right)",
+                                "description": "Right Option + Right Arrow \u2192 Option + Right Arrow (word skip right)",
                                 "from": {
                                     "key_code": "right_arrow",
-                                    "modifiers": { "mandatory": ["right_option"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "right_arrow",
-                                        "modifiers": ["option"]
+                                        "modifiers": [
+                                            "option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -155,15 +197,23 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "Right Option + Shift + Left Arrow → Option + Shift + Left Arrow (word select left)",
+                                "description": "Right Option + Shift + Left Arrow \u2192 Option + Shift + Left Arrow (word select left)",
                                 "from": {
                                     "key_code": "left_arrow",
-                                    "modifiers": { "mandatory": ["right_option", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option",
+                                            "shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "left_arrow",
-                                        "modifiers": ["option", "shift"]
+                                        "modifiers": [
+                                            "option",
+                                            "shift"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -176,15 +226,23 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "Right Option + Shift + Right Arrow → Option + Shift + Right Arrow (word select right)",
+                                "description": "Right Option + Shift + Right Arrow \u2192 Option + Shift + Right Arrow (word select right)",
                                 "from": {
                                     "key_code": "right_arrow",
-                                    "modifiers": { "mandatory": ["right_option", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option",
+                                            "shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "right_arrow",
-                                        "modifiers": ["option", "shift"]
+                                        "modifiers": [
+                                            "option",
+                                            "shift"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -197,21 +255,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "Right Option + Backspace → Option + Backspace (delete previous word)",
+                                "description": "Right Option + Backspace \u2192 Option + Backspace (delete previous word)",
                                 "from": {
                                     "key_code": "delete_or_backspace",
-                                    "modifiers": { "mandatory": ["right_option"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "delete_or_backspace",
-                                        "modifiers": ["option"]
+                                        "modifiers": [
+                                            "option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
                             },
-
-
                             {
                                 "conditions": [
                                     {
@@ -227,15 +289,24 @@
                                         "type": "frontmost_application_if"
                                     }
                                 ],
-                                "description": "fn + C in terminals → Control + C (kill process)",
+                                "description": "fn + C in terminals \u2192 Control + C (kill process)",
                                 "from": {
                                     "key_code": "c",
-                                    "modifiers": { "mandatory": ["fn"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "c",
-                                        "modifiers": ["control"]
+                                        "modifiers": [
+                                            "control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -255,15 +326,21 @@
                                         "type": "frontmost_application_if"
                                     }
                                 ],
-                                "description": "fn + D in terminals → Control + D (EOF)",
+                                "description": "fn + D in terminals \u2192 Control + D (EOF)",
                                 "from": {
                                     "key_code": "d",
-                                    "modifiers": { "mandatory": ["fn"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "d",
-                                        "modifiers": ["control"]
+                                        "modifiers": [
+                                            "control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -283,15 +360,21 @@
                                         "type": "frontmost_application_if"
                                     }
                                 ],
-                                "description": "fn + Z in terminals → Control + Z (suspend)",
+                                "description": "fn + Z in terminals \u2192 Control + Z (suspend)",
                                 "from": {
                                     "key_code": "z",
-                                    "modifiers": { "mandatory": ["fn"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "z",
-                                        "modifiers": ["control"]
+                                        "modifiers": [
+                                            "control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -311,15 +394,21 @@
                                         "type": "frontmost_application_if"
                                     }
                                 ],
-                                "description": "fn + L in terminals → Control + L (clear screen)",
+                                "description": "fn + L in terminals \u2192 Control + L (clear screen)",
                                 "from": {
                                     "key_code": "l",
-                                    "modifiers": { "mandatory": ["fn"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "l",
-                                        "modifiers": ["control"]
+                                        "modifiers": [
+                                            "control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -339,15 +428,21 @@
                                         "type": "frontmost_application_if"
                                     }
                                 ],
-                                "description": "fn + A in terminals → Control + A (beginning of line)",
+                                "description": "fn + A in terminals \u2192 Control + A (beginning of line)",
                                 "from": {
                                     "key_code": "a",
-                                    "modifiers": { "mandatory": ["fn"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "a",
-                                        "modifiers": ["control"]
+                                        "modifiers": [
+                                            "control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -367,15 +462,21 @@
                                         "type": "frontmost_application_if"
                                     }
                                 ],
-                                "description": "fn + E in terminals → Control + E (end of line)",
+                                "description": "fn + E in terminals \u2192 Control + E (end of line)",
                                 "from": {
                                     "key_code": "e",
-                                    "modifiers": { "mandatory": ["fn"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "e",
-                                        "modifiers": ["control"]
+                                        "modifiers": [
+                                            "control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -395,15 +496,21 @@
                                         "type": "frontmost_application_if"
                                     }
                                 ],
-                                "description": "fn + F in terminals → Control + F (forward char)",
+                                "description": "fn + F in terminals \u2192 Control + F (forward char)",
                                 "from": {
                                     "key_code": "f",
-                                    "modifiers": { "mandatory": ["fn"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "f",
-                                        "modifiers": ["control"]
+                                        "modifiers": [
+                                            "control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -423,15 +530,21 @@
                                         "type": "frontmost_application_if"
                                     }
                                 ],
-                                "description": "fn + K in terminals → Control + K (kill line)",
+                                "description": "fn + K in terminals \u2192 Control + K (kill line)",
                                 "from": {
                                     "key_code": "k",
-                                    "modifiers": { "mandatory": ["fn"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "k",
-                                        "modifiers": ["control"]
+                                        "modifiers": [
+                                            "control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -451,15 +564,21 @@
                                         "type": "frontmost_application_if"
                                     }
                                 ],
-                                "description": "fn + N in terminals → Control + N (next command)",
+                                "description": "fn + N in terminals \u2192 Control + N (next command)",
                                 "from": {
                                     "key_code": "n",
-                                    "modifiers": { "mandatory": ["fn"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "n",
-                                        "modifiers": ["control"]
+                                        "modifiers": [
+                                            "control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -479,15 +598,21 @@
                                         "type": "frontmost_application_if"
                                     }
                                 ],
-                                "description": "fn + P in terminals → Control + P (previous command)",
+                                "description": "fn + P in terminals \u2192 Control + P (previous command)",
                                 "from": {
                                     "key_code": "p",
-                                    "modifiers": { "mandatory": ["fn"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "p",
-                                        "modifiers": ["control"]
+                                        "modifiers": [
+                                            "control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -507,15 +632,21 @@
                                         "type": "frontmost_application_if"
                                     }
                                 ],
-                                "description": "fn + R in terminals → Control + R (reverse search)",
+                                "description": "fn + R in terminals \u2192 Control + R (reverse search)",
                                 "from": {
                                     "key_code": "r",
-                                    "modifiers": { "mandatory": ["fn"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "r",
-                                        "modifiers": ["control"]
+                                        "modifiers": [
+                                            "control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -535,15 +666,21 @@
                                         "type": "frontmost_application_if"
                                     }
                                 ],
-                                "description": "fn + U in terminals → Control + U (kill line backward)",
+                                "description": "fn + U in terminals \u2192 Control + U (kill line backward)",
                                 "from": {
                                     "key_code": "u",
-                                    "modifiers": { "mandatory": ["fn"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "u",
-                                        "modifiers": ["control"]
+                                        "modifiers": [
+                                            "control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -561,15 +698,21 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + Left Arrow → Option + Left Arrow (word skip left)",
+                                "description": "fn + Left Arrow \u2192 Option + Left Arrow (word skip left)",
                                 "from": {
                                     "key_code": "left_arrow",
-                                    "modifiers": { "mandatory": ["fn"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "left_arrow",
-                                        "modifiers": ["option"]
+                                        "modifiers": [
+                                            "option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -582,15 +725,23 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + Shift + Left Arrow → Option + Shift + Left Arrow (word select left)",
+                                "description": "fn + Shift + Left Arrow \u2192 Option + Shift + Left Arrow (word select left)",
                                 "from": {
                                     "key_code": "left_arrow",
-                                    "modifiers": { "mandatory": ["fn", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn",
+                                            "shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "left_arrow",
-                                        "modifiers": ["option", "shift"]
+                                        "modifiers": [
+                                            "option",
+                                            "shift"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -603,15 +754,21 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + Right Arrow → Option + Right Arrow (word skip right)",
+                                "description": "fn + Right Arrow \u2192 Option + Right Arrow (word skip right)",
                                 "from": {
                                     "key_code": "right_arrow",
-                                    "modifiers": { "mandatory": ["fn"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "right_arrow",
-                                        "modifiers": ["option"]
+                                        "modifiers": [
+                                            "option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -624,15 +781,23 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + Shift + Right Arrow → Option + Shift + Right Arrow (word select right)",
+                                "description": "fn + Shift + Right Arrow \u2192 Option + Shift + Right Arrow (word select right)",
                                 "from": {
                                     "key_code": "right_arrow",
-                                    "modifiers": { "mandatory": ["fn", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn",
+                                            "shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "right_arrow",
-                                        "modifiers": ["option", "shift"]
+                                        "modifiers": [
+                                            "option",
+                                            "shift"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -645,15 +810,21 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "Control + Left Arrow → Command + Left Arrow (line start)",
+                                "description": "Control + Left Arrow \u2192 Command + Left Arrow (line start)",
                                 "from": {
                                     "key_code": "left_arrow",
-                                    "modifiers": { "mandatory": ["control"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "left_arrow",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -666,15 +837,23 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "Control + Shift + Left Arrow → Command + Shift + Left Arrow (select to line start)",
+                                "description": "Control + Shift + Left Arrow \u2192 Command + Shift + Left Arrow (select to line start)",
                                 "from": {
                                     "key_code": "left_arrow",
-                                    "modifiers": { "mandatory": ["control", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control",
+                                            "shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "left_arrow",
-                                        "modifiers": ["command", "shift"]
+                                        "modifiers": [
+                                            "command",
+                                            "shift"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -687,15 +866,21 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "Control + Right Arrow → Command + Right Arrow (line end)",
+                                "description": "Control + Right Arrow \u2192 Command + Right Arrow (line end)",
                                 "from": {
                                     "key_code": "right_arrow",
-                                    "modifiers": { "mandatory": ["control"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "right_arrow",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -708,15 +893,23 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "Control + Shift + Right Arrow → Command + Shift + Right Arrow (select to line end)",
+                                "description": "Control + Shift + Right Arrow \u2192 Command + Shift + Right Arrow (select to line end)",
                                 "from": {
                                     "key_code": "right_arrow",
-                                    "modifiers": { "mandatory": ["control", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control",
+                                            "shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "right_arrow",
-                                        "modifiers": ["command", "shift"]
+                                        "modifiers": [
+                                            "command",
+                                            "shift"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -729,10 +922,14 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "Control + Up Arrow → Page Up",
+                                "description": "Control + Up Arrow \u2192 Page Up",
                                 "from": {
                                     "key_code": "up_arrow",
-                                    "modifiers": { "mandatory": ["control"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
@@ -749,15 +946,22 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "Control + Shift + Up Arrow → Shift + Page Up (select page up)",
+                                "description": "Control + Shift + Up Arrow \u2192 Shift + Page Up (select page up)",
                                 "from": {
                                     "key_code": "up_arrow",
-                                    "modifiers": { "mandatory": ["control", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control",
+                                            "shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "page_up",
-                                        "modifiers": ["shift"]
+                                        "modifiers": [
+                                            "shift"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -770,10 +974,14 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "Control + Down Arrow → Page Down",
+                                "description": "Control + Down Arrow \u2192 Page Down",
                                 "from": {
                                     "key_code": "down_arrow",
-                                    "modifiers": { "mandatory": ["control"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
@@ -790,15 +998,22 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "Control + Shift + Down Arrow → Shift + Page Down (select page down)",
+                                "description": "Control + Shift + Down Arrow \u2192 Shift + Page Down (select page down)",
                                 "from": {
                                     "key_code": "down_arrow",
-                                    "modifiers": { "mandatory": ["control", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control",
+                                            "shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "page_down",
-                                        "modifiers": ["shift"]
+                                        "modifiers": [
+                                            "shift"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -811,15 +1026,22 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + Control + Left Arrow → Command + Up Arrow (document start)",
+                                "description": "fn + Control + Left Arrow \u2192 Command + Up Arrow (document start)",
                                 "from": {
                                     "key_code": "left_arrow",
-                                    "modifiers": { "mandatory": ["fn", "control"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn",
+                                            "control"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "up_arrow",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -832,15 +1054,24 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + Control + Shift + Left Arrow → Command + Shift + Up Arrow (select to document start)",
+                                "description": "fn + Control + Shift + Left Arrow \u2192 Command + Shift + Up Arrow (select to document start)",
                                 "from": {
                                     "key_code": "left_arrow",
-                                    "modifiers": { "mandatory": ["fn", "control", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn",
+                                            "control",
+                                            "shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "up_arrow",
-                                        "modifiers": ["command", "shift"]
+                                        "modifiers": [
+                                            "command",
+                                            "shift"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -853,15 +1084,22 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + Control + Right Arrow → Command + Down Arrow (document end)",
+                                "description": "fn + Control + Right Arrow \u2192 Command + Down Arrow (document end)",
                                 "from": {
                                     "key_code": "right_arrow",
-                                    "modifiers": { "mandatory": ["fn", "control"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn",
+                                            "control"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "down_arrow",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -874,15 +1112,24 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + Control + Shift + Right Arrow → Command + Shift + Down Arrow (select to document end)",
+                                "description": "fn + Control + Shift + Right Arrow \u2192 Command + Shift + Down Arrow (select to document end)",
                                 "from": {
                                     "key_code": "right_arrow",
-                                    "modifiers": { "mandatory": ["fn", "control", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn",
+                                            "control",
+                                            "shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "down_arrow",
-                                        "modifiers": ["command", "shift"]
+                                        "modifiers": [
+                                            "command",
+                                            "shift"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -895,18 +1142,27 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + Backspace → Option + Backspace (delete previous word)",
+                                "description": "fn + Backspace \u2192 Option + Backspace (delete previous word)",
                                 "from": {
                                     "key_code": "delete_or_backspace",
-                                    "modifiers": { "mandatory": ["fn"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "delete_or_backspace",
-                                        "modifiers": ["option"]
+                                        "modifiers": [
+                                            "option"
+                                        ]
                                     }
                                 ],
-                                                                "type": "basic"
+                                "type": "basic"
                             }
                         ]
                     },
@@ -928,18 +1184,25 @@
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
-                                "description": "fn + A → Command + A (select all)",
+                                "description": "fn + A \u2192 Command + A (select all)",
                                 "from": {
                                     "key_code": "a",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "a",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -952,18 +1215,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + B → Command + B (bold)",
+                                "description": "fn + B \u2192 Command + B (bold)",
                                 "from": {
                                     "key_code": "b",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "b",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -983,18 +1253,25 @@
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
-                                "description": "fn + C → Command + C (copy)",
+                                "description": "fn + C \u2192 Command + C (copy)",
                                 "from": {
                                     "key_code": "c",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "c",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1014,18 +1291,25 @@
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
-                                "description": "fn + D → Command + D (duplicate/bookmark)",
+                                "description": "fn + D \u2192 Command + D (duplicate/bookmark)",
                                 "from": {
                                     "key_code": "d",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "d",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1045,18 +1329,25 @@
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
-                                "description": "fn + E → Command + E (use selection for find)",
+                                "description": "fn + E \u2192 Command + E (use selection for find)",
                                 "from": {
                                     "key_code": "e",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "e",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1076,18 +1367,25 @@
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
-                                "description": "fn + F → Command + F (find)",
+                                "description": "fn + F \u2192 Command + F (find)",
                                 "from": {
                                     "key_code": "f",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "f",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1100,18 +1398,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + G → Command + G (find next)",
+                                "description": "fn + G \u2192 Command + G (find next)",
                                 "from": {
                                     "key_code": "g",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "g",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1124,18 +1429,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + H → Command + H (hide/find replace)",
+                                "description": "fn + H \u2192 Command + H (hide/find replace)",
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "h",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1148,18 +1460,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + I → Command + I (italic)",
+                                "description": "fn + I \u2192 Command + I (italic)",
                                 "from": {
                                     "key_code": "i",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "i",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1172,18 +1491,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + J → Command + J (jump to selection)",
+                                "description": "fn + J \u2192 Command + J (jump to selection)",
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "j",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1203,18 +1529,25 @@
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
-                                "description": "fn + K → Command + K (add link)",
+                                "description": "fn + K \u2192 Command + K (add link)",
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "k",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1234,18 +1567,25 @@
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
-                                "description": "fn + L → Command + L (location/address bar)",
+                                "description": "fn + L \u2192 Command + L (location/address bar)",
                                 "from": {
                                     "key_code": "l",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "l",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1258,18 +1598,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + M → Command + M (minimize)",
+                                "description": "fn + M \u2192 Command + M (minimize)",
                                 "from": {
                                     "key_code": "m",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "m",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1289,18 +1636,25 @@
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
-                                "description": "fn + N → Command + N (new)",
+                                "description": "fn + N \u2192 Command + N (new)",
                                 "from": {
                                     "key_code": "n",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "n",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1313,18 +1667,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + O → Command + O (open)",
+                                "description": "fn + O \u2192 Command + O (open)",
                                 "from": {
                                     "key_code": "o",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "o",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1344,18 +1705,25 @@
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
-                                "description": "fn + P → Command + P (print)",
+                                "description": "fn + P \u2192 Command + P (print)",
                                 "from": {
                                     "key_code": "p",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "p",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1368,18 +1736,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + Q → Command + Q (quit)",
+                                "description": "fn + Q \u2192 Command + Q (quit)",
                                 "from": {
                                     "key_code": "q",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "q",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1399,18 +1774,25 @@
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
-                                "description": "fn + R → Command + R (reload)",
+                                "description": "fn + R \u2192 Command + R (reload)",
                                 "from": {
                                     "key_code": "r",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "r",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1423,18 +1805,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + S → Command + S (save)",
+                                "description": "fn + S \u2192 Command + S (save)",
                                 "from": {
                                     "key_code": "s",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "s",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1447,18 +1836,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + T → Command + T (new tab)",
+                                "description": "fn + T \u2192 Command + T (new tab)",
                                 "from": {
                                     "key_code": "t",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "t",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1478,18 +1874,25 @@
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
-                                "description": "fn + U → Command + U (underline)",
+                                "description": "fn + U \u2192 Command + U (underline)",
                                 "from": {
                                     "key_code": "u",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "u",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1502,18 +1905,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + V → Command + V (paste)",
+                                "description": "fn + V \u2192 Command + V (paste)",
                                 "from": {
                                     "key_code": "v",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "v",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1526,18 +1936,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + W → Command + W (close tab/window)",
+                                "description": "fn + W \u2192 Command + W (close tab/window)",
                                 "from": {
                                     "key_code": "w",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "w",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1550,18 +1967,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + X → Command + X (cut)",
+                                "description": "fn + X \u2192 Command + X (cut)",
                                 "from": {
                                     "key_code": "x",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "x",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1574,18 +1998,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + Y → Command + Y (redo)",
+                                "description": "fn + Y \u2192 Command + Y (redo)",
                                 "from": {
                                     "key_code": "y",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "y",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1605,18 +2036,25 @@
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
-                                "description": "fn + Z → Command + Z (undo)",
+                                "description": "fn + Z \u2192 Command + Z (undo)",
                                 "from": {
                                     "key_code": "z",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "z",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1634,18 +2072,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + 0 → Command + 0 (tab/bookmark 10)",
+                                "description": "fn + 0 \u2192 Command + 0 (tab/bookmark 10)",
                                 "from": {
                                     "key_code": "0",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "0",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1658,18 +2103,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + 1 → Command + 1 (tab/bookmark 1)",
+                                "description": "fn + 1 \u2192 Command + 1 (tab/bookmark 1)",
                                 "from": {
                                     "key_code": "1",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "1",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1682,18 +2134,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + 2 → Command + 2 (tab/bookmark 2)",
+                                "description": "fn + 2 \u2192 Command + 2 (tab/bookmark 2)",
                                 "from": {
                                     "key_code": "2",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "2",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1706,18 +2165,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + 3 → Command + 3 (tab/bookmark 3)",
+                                "description": "fn + 3 \u2192 Command + 3 (tab/bookmark 3)",
                                 "from": {
                                     "key_code": "3",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "3",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1730,18 +2196,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + 4 → Command + 4 (tab/bookmark 4)",
+                                "description": "fn + 4 \u2192 Command + 4 (tab/bookmark 4)",
                                 "from": {
                                     "key_code": "4",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "4",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1754,18 +2227,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + 5 → Command + 5 (tab/bookmark 5)",
+                                "description": "fn + 5 \u2192 Command + 5 (tab/bookmark 5)",
                                 "from": {
                                     "key_code": "5",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "5",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1778,18 +2258,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + 6 → Command + 6 (tab/bookmark 6)",
+                                "description": "fn + 6 \u2192 Command + 6 (tab/bookmark 6)",
                                 "from": {
                                     "key_code": "6",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "6",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1802,18 +2289,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + 7 → Command + 7 (tab/bookmark 7)",
+                                "description": "fn + 7 \u2192 Command + 7 (tab/bookmark 7)",
                                 "from": {
                                     "key_code": "7",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "7",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1826,18 +2320,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + 8 → Command + 8 (tab/bookmark 8)",
+                                "description": "fn + 8 \u2192 Command + 8 (tab/bookmark 8)",
                                 "from": {
                                     "key_code": "8",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "8",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1850,18 +2351,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + 9 → Command + 9 (tab/bookmark 9)",
+                                "description": "fn + 9 \u2192 Command + 9 (tab/bookmark 9)",
                                 "from": {
                                     "key_code": "9",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "9",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1879,18 +2387,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + - → Command + - (zoom out)",
+                                "description": "fn + - \u2192 Command + - (zoom out)",
                                 "from": {
                                     "key_code": "hyphen",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "hyphen",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1903,18 +2418,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + = → Command + = (zoom in)",
+                                "description": "fn + = \u2192 Command + = (zoom in)",
                                 "from": {
                                     "key_code": "equal_sign",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "equal_sign",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1927,18 +2449,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + [ → Command + [ (back/outdent)",
+                                "description": "fn + [ \u2192 Command + [ (back/outdent)",
                                 "from": {
                                     "key_code": "open_bracket",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "open_bracket",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1951,18 +2480,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + ] → Command + ] (forward/indent)",
+                                "description": "fn + ] \u2192 Command + ] (forward/indent)",
                                 "from": {
                                     "key_code": "close_bracket",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "close_bracket",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1975,18 +2511,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + \\ → Command + \\ (various uses)",
+                                "description": "fn + \\ \u2192 Command + \\ (various uses)",
                                 "from": {
                                     "key_code": "backslash",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "backslash",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1999,18 +2542,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + ; → Command + ; (spell check)",
+                                "description": "fn + ; \u2192 Command + ; (spell check)",
                                 "from": {
                                     "key_code": "semicolon",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "semicolon",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -2023,18 +2573,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + ' → Command + ' (cycle windows)",
+                                "description": "fn + ' \u2192 Command + ' (cycle windows)",
                                 "from": {
                                     "key_code": "quote",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "quote",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -2047,18 +2604,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + , → Command + , (preferences)",
+                                "description": "fn + , \u2192 Command + , (preferences)",
                                 "from": {
                                     "key_code": "comma",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "comma",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -2071,18 +2635,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + . → Command + . (cancel/stop)",
+                                "description": "fn + . \u2192 Command + . (cancel/stop)",
                                 "from": {
                                     "key_code": "period",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "period",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -2095,18 +2666,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + / → Command + / (help/comment)",
+                                "description": "fn + / \u2192 Command + / (help/comment)",
                                 "from": {
                                     "key_code": "slash",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "slash",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -2119,18 +2697,25 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + ` → Command + ` (cycle app windows)",
+                                "description": "fn + ` \u2192 Command + ` (cycle app windows)",
                                 "from": {
                                     "key_code": "grave_accent_and_tilde",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "shift",
+                                            "caps_lock"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "grave_accent_and_tilde",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -2148,12 +2733,20 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "Left Command → Left Option (Windows Alt equivalent)",
+                                "description": "Left Command \u2192 Left Option (Windows Alt equivalent)",
                                 "from": {
                                     "key_code": "left_command",
-                                    "modifiers": { "optional": ["any"] }
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
                                 },
-                                "to": [{ "key_code": "left_option" }],
+                                "to": [
+                                    {
+                                        "key_code": "left_option"
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -2164,12 +2757,20 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "Right Command → Right Option (Windows Alt equivalent)",
+                                "description": "Right Command \u2192 Right Option (Windows Alt equivalent)",
                                 "from": {
                                     "key_code": "right_command",
-                                    "modifiers": { "optional": ["any"] }
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
                                 },
-                                "to": [{ "key_code": "right_option" }],
+                                "to": [
+                                    {
+                                        "key_code": "right_option"
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -2180,13 +2781,21 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "Left Option → Left Command (Windows Meta equivalent)",
+                                "description": "Left Option \u2192 Left Command (Windows Meta equivalent)",
                                 "from": {
                                     "key_code": "left_option",
-                                    "modifiers": { "optional": ["any"] }
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
                                 },
-                                "to": [{ "key_code": "left_command" }],
-                                                                "type": "basic"
+                                "to": [
+                                    {
+                                        "key_code": "left_command"
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     }
@@ -2194,63 +2803,139 @@
             },
             "devices": [
                 {
-                    "identifiers": { "is_keyboard": true },
-                    "manipulate_caps_lock_led": false
+                    "identifiers": {
+                        "is_keyboard": true
+                    },
+                    "manipulate_caps_lock_led": true
                 }
             ],
             "fn_function_keys": [
                 {
-                    "from": { "key_code": "f1" },
-                    "to": [{ "key_code": "display_brightness_decrement" }]
+                    "from": {
+                        "key_code": "f1"
+                    },
+                    "to": [
+                        {
+                            "key_code": "display_brightness_decrement"
+                        }
+                    ]
                 },
                 {
-                    "from": { "key_code": "f2" },
-                    "to": [{ "key_code": "display_brightness_increment" }]
+                    "from": {
+                        "key_code": "f2"
+                    },
+                    "to": [
+                        {
+                            "key_code": "display_brightness_increment"
+                        }
+                    ]
                 },
                 {
-                    "from": { "key_code": "f3" },
-                    "to": [{ "key_code": "mission_control" }]
+                    "from": {
+                        "key_code": "f3"
+                    },
+                    "to": [
+                        {
+                            "key_code": "mission_control"
+                        }
+                    ]
                 },
                 {
-                    "from": { "key_code": "f4" },
-                    "to": [{ "key_code": "launchpad" }]
+                    "from": {
+                        "key_code": "f4"
+                    },
+                    "to": [
+                        {
+                            "key_code": "launchpad"
+                        }
+                    ]
                 },
                 {
-                    "from": { "key_code": "f5" },
-                    "to": [{ "key_code": "illumination_decrement" }]
+                    "from": {
+                        "key_code": "f5"
+                    },
+                    "to": [
+                        {
+                            "key_code": "illumination_decrement"
+                        }
+                    ]
                 },
                 {
-                    "from": { "key_code": "f6" },
-                    "to": [{ "key_code": "illumination_increment" }]
+                    "from": {
+                        "key_code": "f6"
+                    },
+                    "to": [
+                        {
+                            "key_code": "illumination_increment"
+                        }
+                    ]
                 },
                 {
-                    "from": { "key_code": "f7" },
-                    "to": [{ "key_code": "rewind" }]
+                    "from": {
+                        "key_code": "f7"
+                    },
+                    "to": [
+                        {
+                            "key_code": "rewind"
+                        }
+                    ]
                 },
                 {
-                    "from": { "key_code": "f8" },
-                    "to": [{ "key_code": "play_or_pause" }]
+                    "from": {
+                        "key_code": "f8"
+                    },
+                    "to": [
+                        {
+                            "key_code": "play_or_pause"
+                        }
+                    ]
                 },
                 {
-                    "from": { "key_code": "f9" },
-                    "to": [{ "key_code": "fastforward" }]
+                    "from": {
+                        "key_code": "f9"
+                    },
+                    "to": [
+                        {
+                            "key_code": "fastforward"
+                        }
+                    ]
                 },
                 {
-                    "from": { "key_code": "f10" },
-                    "to": [{ "key_code": "mute" }]
+                    "from": {
+                        "key_code": "f10"
+                    },
+                    "to": [
+                        {
+                            "key_code": "mute"
+                        }
+                    ]
                 },
                 {
-                    "from": { "key_code": "f11" },
-                    "to": [{ "key_code": "volume_decrement" }]
+                    "from": {
+                        "key_code": "f11"
+                    },
+                    "to": [
+                        {
+                            "key_code": "volume_decrement"
+                        }
+                    ]
                 },
                 {
-                    "from": { "key_code": "f12" },
-                    "to": [{ "key_code": "volume_increment" }]
+                    "from": {
+                        "key_code": "f12"
+                    },
+                    "to": [
+                        {
+                            "key_code": "volume_increment"
+                        }
+                    ]
                 }
             ],
             "name": "Windows-to-Mac Keyboard Mapping",
             "selected": true,
-            "variables": { "windows_mapping_enabled": 1 },
+            "variables": {
+                "windows_mapping_enabled": 1
+            },
             "virtual_hid_keyboard": {
                 "country_code": 0,
                 "keyboard_type_v2": "ansi"
