@@ -57,7 +57,7 @@
                         ]
                     },
                     {
-                        "description": "Windows-to-Mac: fn key special cases (highest priority)",
+                                                "description": "Windows-to-Mac: fn key special cases (highest priority)",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -67,20 +67,46 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + Tab → Control + Tab (tab switching)",
+                                "description": "fn + Tab → Enable tab switching mode and send Control+Tab",
                                 "from": {
                                     "key_code": "tab",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["shift"]
+                                        "mandatory": ["fn"]
                                     }
                                 },
                                 "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "tab_switching_mode",
+                                            "value": 1
+                                        }
+                                    },
                                     {
                                         "key_code": "tab",
                                         "modifiers": ["control"]
                                     }
                                 ],
+                                "to_delayed_action": {
+                                    "to_if_invoked": [
+                                        {
+                                            "set_variable": {
+                                                "name": "tab_switching_mode",
+                                                "value": 0
+                                            }
+                                        }
+                                    ],
+                                    "to_if_canceled": [
+                                        {
+                                            "set_variable": {
+                                                "name": "tab_switching_mode",
+                                                "value": 0
+                                            }
+                                        }
+                                    ]
+                                },
+                                "parameters": {
+                                    "basic.to_delayed_action_delay_milliseconds": 1000
+                                },
                                 "type": "basic"
                             },
                             {
@@ -91,10 +117,113 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "fn + Shift + Tab → Control + Shift + Tab (reverse tab)",
+                                "description": "fn + Shift + Tab → Enable tab switching mode and send Control+Shift+Tab",
                                 "from": {
                                     "key_code": "tab",
-                                    "modifiers": { "mandatory": ["fn", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": ["fn", "shift"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "tab_switching_mode",
+                                            "value": 1
+                                        }
+                                    },
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": ["control", "shift"]
+                                    }
+                                ],
+                                "to_delayed_action": {
+                                    "to_if_invoked": [
+                                        {
+                                            "set_variable": {
+                                                "name": "tab_switching_mode",
+                                                "value": 0
+                                            }
+                                        }
+                                    ],
+                                    "to_if_canceled": [
+                                        {
+                                            "set_variable": {
+                                                "name": "tab_switching_mode",
+                                                "value": 0
+                                            }
+                                        }
+                                    ]
+                                },
+                                "parameters": {
+                                    "basic.to_delayed_action_delay_milliseconds": 1000
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "windows_mapping_enabled",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "tab_switching_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Tab in tab switching mode → Send Control+Tab and extend timer",
+                                "from": {
+                                    "key_code": "tab"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": ["control"]
+                                    }
+                                ],
+                                "to_delayed_action": {
+                                    "to_if_invoked": [
+                                        {
+                                            "set_variable": {
+                                                "name": "tab_switching_mode",
+                                                "value": 0
+                                            }
+                                        }
+                                    ],
+                                    "to_if_canceled": [
+                                        {
+                                            "set_variable": {
+                                                "name": "tab_switching_mode",
+                                                "value": 0
+                                            }
+                                        }
+                                    ]
+                                },
+                                "parameters": {
+                                    "basic.to_delayed_action_delay_milliseconds": 1000
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "windows_mapping_enabled",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "tab_switching_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Shift+Tab in tab switching mode → Send Control+Shift+Tab and extend timer",
+                                "from": {
+                                    "key_code": "tab",
+                                    "modifiers": {
+                                        "mandatory": ["shift"]
+                                    }
                                 },
                                 "to": [
                                     {
@@ -102,8 +231,30 @@
                                         "modifiers": ["control", "shift"]
                                     }
                                 ],
+                                "to_delayed_action": {
+                                    "to_if_invoked": [
+                                        {
+                                            "set_variable": {
+                                                "name": "tab_switching_mode",
+                                                "value": 0
+                                            }
+                                        }
+                                    ],
+                                    "to_if_canceled": [
+                                        {
+                                            "set_variable": {
+                                                "name": "tab_switching_mode",
+                                                "value": 0
+                                            }
+                                        }
+                                    ]
+                                },
+                                "parameters": {
+                                    "basic.to_delayed_action_delay_milliseconds": 1000
+                                },
                                 "type": "basic"
                             },
+
                             {
                                 "conditions": [
                                     {

@@ -91,10 +91,16 @@ fn + Z → Ctrl + Z (suspend process)
 - `fn + Control + Left/Right Arrow` → Document start/end
 - `fn + Control + Shift + Left/Right Arrow` → Document start/end with selection
 
-### ✅ **Tab Management**
-- `fn + Tab` → Switch tabs forward (like Windows `Ctrl + Tab`)
-- `fn + Shift + Tab` → Switch tabs backward
-- **Windows-style behavior**: Hold `fn + Tab` to open tab menu, then add/release `Shift` to navigate forward/backward. Selection is made when all keys are released.
+### ✅ **Tab Management (Windows-Style Continuous Navigation)**
+- `fn + Tab` → Opens tab switcher and navigates forward (initiates tab switching mode)
+- `fn + Shift + Tab` → Opens tab switcher and navigates backward (initiates tab switching mode)
+- **Enhanced Windows-style behavior**: 
+  - First `fn + Tab` opens the tab menu and moves to first item
+  - Additional `Tab` presses (without `fn`) continue navigating forward
+  - Additional `Shift + Tab` presses navigate backward  
+  - **1-second timeout**: Menu automatically selects current item after 1 second of inactivity
+  - **Timer reset**: Each navigation press resets the 1-second timer
+  - Enables rapid tab navigation: `fn + Tab`, then quick `Tab Tab Tab` to move multiple tabs
 
 ### ✅ **Shift Variant Support**
 Every mapping automatically supports shift combinations:
@@ -189,8 +195,10 @@ Since Option keys now act as Command keys, update your BetterTouchTool shortcuts
 ### **Browser/App Navigation**
 | Windows Shortcut | Mac Keys (with mapping) | Result |
 |------------------|-------------------------|---------|
-| `Ctrl + Tab` | `fn + Tab` | Next tab (Windows-style menu) |
-| `Ctrl + Shift + Tab` | `fn + Shift + Tab` | Previous tab (Windows-style menu) |
+| `Ctrl + Tab` | `fn + Tab` | Opens tab switcher and moves forward (starts tab mode) |
+| `Ctrl + Shift + Tab` | `fn + Shift + Tab` | Opens tab switcher and moves backward (starts tab mode) |
+| *Continue navigation* | `Tab` (after `fn + Tab`) | Navigate forward in tab switcher |
+| *Continue navigation* | `Shift + Tab` (after `fn + Tab`) | Navigate backward in tab switcher |
 | `Ctrl + W` | `fn + W` | Close tab |
 | `Ctrl + T` | `fn + T` | New tab |
 | `Ctrl + Shift + T` | `fn + Shift + T` | Reopen tab |
@@ -279,6 +287,14 @@ Since Option keys now act as Command keys, update your BetterTouchTool shortcuts
 ### Terminal Shortcuts Not Working
 - Verify Terminal.app and Warp bundle identifiers are correct
 - Check if you're using a different terminal app (add its bundle identifier to the config)
+
+### Tab Switching Behavior
+The tab switching functionality works very close to Windows behavior:
+- **Working**: `fn + Tab` opens switcher and navigates forward
+- **Working**: Additional `Tab` presses continue navigation  
+- **Working**: 1-second timer auto-selects highlighted item
+- **Known Issue**: Pressing `Shift` during navigation currently closes the menu instead of navigating backward
+- **Workaround**: Use `fn + Shift + Tab` to start backward navigation, then use `Tab` to go forward
 
 ### Finding App Bundle Identifiers
 ```bash
