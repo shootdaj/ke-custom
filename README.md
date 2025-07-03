@@ -82,15 +82,19 @@ fn + Z → Ctrl + Z (suspend process)
 ```
 
 ### ✅ **Developer Navigation (Perfect for VSCode/Cursor)**
-- `Control + Left/Right Arrow` → Word skipping
-- `Control + Shift + Left/Right Arrow` → Word selection
-- `Control + Up/Down Arrow` → Document start/end
-- `fn + Control + Left/Right Arrow` → Line start/end
-- All navigation shortcuts support `Shift` for text selection
+- `fn + Left/Right Arrow` → Word skipping
+- `fn + Shift + Left/Right Arrow` → Word selection
+- `Control + Left/Right Arrow` → Line start/end
+- `Control + Shift + Left/Right Arrow` → Line start/end with selection
+- `Control + Up/Down Arrow` → Page up/down
+- `Control + Shift + Up/Down Arrow` → Page up/down with selection
+- `fn + Control + Left/Right Arrow` → Document start/end
+- `fn + Control + Shift + Left/Right Arrow` → Document start/end with selection
 
 ### ✅ **Tab Management**
 - `fn + Tab` → Switch tabs forward (like Windows `Ctrl + Tab`)
 - `fn + Shift + Tab` → Switch tabs backward
+- **Windows-style behavior**: Hold `fn + Tab` to open tab menu, then add/release `Shift` to navigate forward/backward. Selection is made when all keys are released.
 
 ### ✅ **Shift Variant Support**
 Every mapping automatically supports shift combinations:
@@ -185,8 +189,8 @@ Since Option keys now act as Command keys, update your BetterTouchTool shortcuts
 ### **Browser/App Navigation**
 | Windows Shortcut | Mac Keys (with mapping) | Result |
 |------------------|-------------------------|---------|
-| `Ctrl + Tab` | `fn + Tab` | Next tab |
-| `Ctrl + Shift + Tab` | `fn + Shift + Tab` | Previous tab |
+| `Ctrl + Tab` | `fn + Tab` | Next tab (Windows-style menu) |
+| `Ctrl + Shift + Tab` | `fn + Shift + Tab` | Previous tab (Windows-style menu) |
 | `Ctrl + W` | `fn + W` | Close tab |
 | `Ctrl + T` | `fn + T` | New tab |
 | `Ctrl + Shift + T` | `fn + Shift + T` | Reopen tab |
@@ -206,14 +210,22 @@ Since Option keys now act as Command keys, update your BetterTouchTool shortcuts
 ### **Navigation (Perfect for Coding)**
 | Windows Shortcut | Mac Keys (with mapping) | Result |
 |------------------|-------------------------|---------|
-| `Ctrl + Left` | `Control + Left` | Word skip left |
-| `Ctrl + Right` | `Control + Right` | Word skip right |
-| `Ctrl + Home` | `Control + Up` | Document start |
-| `Ctrl + End` | `Control + Down` | Document end |
-| `Home` | `fn + Control + Left` | Line start |
-| `End` | `fn + Control + Right` | Line end |
-| `Ctrl + Shift + Left` | `Control + Shift + Left` | Select word left |
-| `Ctrl + Shift + Right` | `Control + Shift + Right` | Select word right |
+| `Ctrl + Left` | `fn + Left` | Word skip left |
+| `Ctrl + Right` | `fn + Right` | Word skip right |
+| `Home` | `Control + Left` | Line start |
+| `End` | `Control + Right` | Line end |
+| `Ctrl + Home` | `fn + Control + Left` | Document start |
+| `Ctrl + End` | `fn + Control + Right` | Document end |
+| `Page Up` | `Control + Up` | Page up |
+| `Page Down` | `Control + Down` | Page down |
+| `Ctrl + Shift + Left` | `fn + Shift + Left` | Select word left |
+| `Ctrl + Shift + Right` | `fn + Shift + Right` | Select word right |
+| `Shift + Home` | `Control + Shift + Left` | Select to line start |
+| `Shift + End` | `Control + Shift + Right` | Select to line end |
+| `Ctrl + Shift + Home` | `fn + Control + Shift + Left` | Select to document start |
+| `Ctrl + Shift + End` | `fn + Control + Shift + Right` | Select to document end |
+| `Shift + Page Up` | `Control + Shift + Up` | Select page up |
+| `Shift + Page Down` | `Control + Shift + Down` | Select page down |
 
 ### **Code/Text Editing**
 | Windows Shortcut | Mac Keys (with mapping) | Result |

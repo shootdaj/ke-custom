@@ -17,6 +17,19 @@ The README must accurately document all functionality present in the karabiner.j
 - Don't remove existing comments that are already present
 - When editing JSON files, maintain proper formatting and structure
 
+## Backup Requirements
+**CRITICAL**: Before updating the running Karabiner Elements configuration file (`~/.config/karabiner/karabiner.json`), you MUST create a timestamped backup:
+- Always backup the current configuration before testing changes
+- Use format: `~/.config/karabiner/karabiner.json.backup.YYYY-MM-DD_HH-MM-SS`
+- This ensures we can quickly revert if the new configuration has issues
+- Never skip this step when deploying configuration changes
+
+## Karabiner Restart Requirements
+**CRITICAL**: After deploying any configuration changes, you MUST restart Karabiner Elements to apply the changes:
+- Use AppleScript method: `osascript -e 'quit app "Karabiner-Elements"' && sleep 2 && open -a "Karabiner-Elements"`
+- Never use kill commands that could affect other Karabiner processes
+- Always restart after configuration deployment to ensure changes take effect
+
 ## Karabiner Configuration Guidelines
 - Maintain rule priority order (higher priority rules first)
 - Use descriptive rule names that explain the mapping purpose
