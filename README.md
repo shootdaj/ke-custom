@@ -185,8 +185,8 @@ Change the toggle combinations in the "System toggle controls" section.
 ke-custom/
 ├── karabiner.json              # Main Karabiner Elements configuration
 ├── README.md                   # This file - installation and usage guide
-├── karabiner-elements-plan.md  # Detailed development plan and specifications
 ├── docs/                       # Documentation and development logs
+│   ├── karabiner-elements-plan.md  # Detailed development plan and specifications
 │   └── chats/                  # AI conversation logs from development sessions
 │       ├── README.md           # Chat logging system documentation
 │       └── *.md                # Individual conversation exports
@@ -195,16 +195,39 @@ ke-custom/
 └── .gitignore                 # Git ignore rules
 ```
 
-## Development Logs
+## Documentation
 
-This project maintains detailed logs of AI-assisted development sessions in [`docs/chats/`](./docs/chats/). These logs provide:
+The [`docs/`](./docs/) folder contains comprehensive documentation for this project:
 
-- **Context** for design decisions and implementation choices
-- **Troubleshooting history** for common issues
-- **Evolution** of the configuration over time
-- **Reference** for future enhancements
+### Development Plan
+- [`docs/karabiner-elements-plan.md`](./docs/karabiner-elements-plan.md) - Detailed technical specifications, development roadmap, and design decisions
 
-To add a new chat log: `./scripts/add-chat-log.sh "topic-description" "ai-assistant"`
+### Development Logs  
+- [`docs/chats/`](./docs/chats/) - AI-assisted development session logs that provide:
+  - **Context** for design decisions and implementation choices
+  - **Troubleshooting history** for common issues
+  - **Evolution** of the configuration over time
+  - **Reference** for future enhancements
+
+#### Adding New Chat Logs
+To add a new development chat log:
+
+1. **Export from Cursor**: 
+   - Click the menu (⋮) in the chat panel → "Export Chat" 
+   - Save the `.md` file to `docs/chats/exported/`
+
+2. **Run the script**: 
+   ```bash
+   ./scripts/add-chat-log.sh
+   ```
+   The script automatically finds and processes the latest exported file
+
+3. **Automatic organization**: 
+   - Creates timestamped file: `docs/chats/YYYY-MM-DD_HH-MM-SS.md`
+   - Removes the original export file
+   - Ready for git commit
+
+See [`docs/chats/README.md`](./docs/chats/README.md) for detailed workflow and best practices.
 
 ## Contributing
 
