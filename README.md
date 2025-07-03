@@ -304,7 +304,9 @@ Since Option keys now act as Command keys, update your BetterTouchTool shortcuts
 - **Fixed in latest version**: All fn key mappings now include `caps_lock` as an optional modifier
 - This resolves the issue where fn key combinations don't work when Caps Lock is enabled
 - The fix addresses Karabiner Elements 15.1.0+ breaking changes related to Caps Lock accidental keystroke prevention
-- All 47 fn key mappings have been updated to work seamlessly with Caps Lock in any state
+- **What was fixed**: All 47 fn key mappings + arrow keys + Control+arrow combinations now work with Caps Lock active
+- **Root cause**: When Caps Lock is active, it becomes part of the modifier state and mappings must explicitly include `caps_lock` as optional
+- **Testing**: All functionality tested with both Caps Lock ON and OFF states
 
 ### Terminal Shortcuts Not Working
 - Verify Terminal.app and Warp bundle identifiers are correct

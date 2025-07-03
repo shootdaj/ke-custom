@@ -60,6 +60,63 @@ Rules are organized in sections with different priorities:
 - Move specific rules to higher priority sections
 - Process `Right Option + Left Arrow` before `Right Option` alone
 
+### **Problem: Caps Lock Compatibility (Karabiner Elements 15.1.0+)**
+```json
+// PROBLEMATIC - Missing caps_lock as optional modifier
+{
+  "from": {
+    "key_code": "left_arrow",
+    "modifiers": { "mandatory": ["fn"] }  // ← Missing caps_lock!
+  },
+  "to": [...]
+}
+```
+
+**What happens:**
+- When Caps Lock is **active**, `fn + Left Arrow` stops working
+- Karabiner can't match the rule because Caps Lock becomes part of the modifier state
+- User experiences inconsistent behavior depending on Caps Lock state
+
+**Root Cause:**
+Karabiner Elements 15.1.0+ introduced Caps Lock accidental keystroke prevention. When Caps Lock is active, it affects modifier key processing, requiring explicit inclusion in mappings.
+
+**Solution:**
+```json
+// FIXED - Include caps_lock as optional modifier
+{
+  "from": {
+    "key_code": "left_arrow",
+    "modifiers": { 
+      "mandatory": ["fn"],
+      "optional": ["caps_lock"]  // ← Now works with Caps Lock on/off
+    }
+  },
+  "to": [...]
+}
+```
+
+**Critical Insight:**
+- **ALL fn key mappings** need `"optional": ["caps_lock"]`
+- **ALL Control key mappings** need `"optional": ["caps_lock"]`  
+- **ALL modifier key combinations** should include `caps_lock` as optional
+- This applies to both single keys and combinations (e.g., `fn + shift + key`)
+
+**Systematic Fix Required:**
+When encountering this issue, check ALL mappings, not just the reported ones:
+1. fn + alphabet keys (A-Z)
+2. fn + number keys (0-9)  
+3. fn + symbol keys (-, =, [, ], etc.)
+4. fn + arrow keys (←, →, ↑, ↓)
+5. fn + special keys (Tab, Backspace, etc.)
+6. Control + arrow keys
+7. Any other modifier combinations
+
+**Testing Strategy:**
+Always test functionality with **both Caps Lock states**:
+- ✅ Test with Caps Lock OFF
+- ✅ Test with Caps Lock ON  
+- ❌ Never assume OFF testing covers both cases
+
 ### **Problem: Malformed JSON Structure**
 ```json
 // MALFORMED - Duplicate conditions
