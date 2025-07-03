@@ -241,6 +241,246 @@
                     ]
                   }
                 ]
+              },
+              {
+                "description": "fn + A in terminals → Control + A (beginning of line)",
+                "type": "basic",
+                "from": {
+                  "key_code": "a",
+                  "modifiers": {
+                    "mandatory": ["fn"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "a",
+                    "modifiers": ["control"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  },
+                  {
+                    "type": "frontmost_application_if",
+                    "bundle_identifiers": [
+                      "com.apple.Terminal",
+                      "dev.warp.Warp-Stable"
+                    ]
+                  }
+                ]
+              },
+              {
+                "description": "fn + E in terminals → Control + E (end of line)",
+                "type": "basic",
+                "from": {
+                  "key_code": "e",
+                  "modifiers": {
+                    "mandatory": ["fn"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "e",
+                    "modifiers": ["control"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  },
+                  {
+                    "type": "frontmost_application_if",
+                    "bundle_identifiers": [
+                      "com.apple.Terminal",
+                      "dev.warp.Warp-Stable"
+                    ]
+                  }
+                ]
+              },
+              {
+                "description": "fn + F in terminals → Control + F (forward char)",
+                "type": "basic",
+                "from": {
+                  "key_code": "f",
+                  "modifiers": {
+                    "mandatory": ["fn"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "f",
+                    "modifiers": ["control"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  },
+                  {
+                    "type": "frontmost_application_if",
+                    "bundle_identifiers": [
+                      "com.apple.Terminal",
+                      "dev.warp.Warp-Stable"
+                    ]
+                  }
+                ]
+              },
+              {
+                "description": "fn + K in terminals → Control + K (kill line)",
+                "type": "basic",
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "mandatory": ["fn"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "k",
+                    "modifiers": ["control"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  },
+                  {
+                    "type": "frontmost_application_if",
+                    "bundle_identifiers": [
+                      "com.apple.Terminal",
+                      "dev.warp.Warp-Stable"
+                    ]
+                  }
+                ]
+              },
+              {
+                "description": "fn + N in terminals → Control + N (next command)",
+                "type": "basic",
+                "from": {
+                  "key_code": "n",
+                  "modifiers": {
+                    "mandatory": ["fn"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "n",
+                    "modifiers": ["control"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  },
+                  {
+                    "type": "frontmost_application_if",
+                    "bundle_identifiers": [
+                      "com.apple.Terminal",
+                      "dev.warp.Warp-Stable"
+                    ]
+                  }
+                ]
+              },
+              {
+                "description": "fn + P in terminals → Control + P (previous command)",
+                "type": "basic",
+                "from": {
+                  "key_code": "p",
+                  "modifiers": {
+                    "mandatory": ["fn"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "p",
+                    "modifiers": ["control"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  },
+                  {
+                    "type": "frontmost_application_if",
+                    "bundle_identifiers": [
+                      "com.apple.Terminal",
+                      "dev.warp.Warp-Stable"
+                    ]
+                  }
+                ]
+              },
+              {
+                "description": "fn + R in terminals → Control + R (reverse search)",
+                "type": "basic",
+                "from": {
+                  "key_code": "r",
+                  "modifiers": {
+                    "mandatory": ["fn"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "r",
+                    "modifiers": ["control"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  },
+                  {
+                    "type": "frontmost_application_if",
+                    "bundle_identifiers": [
+                      "com.apple.Terminal",
+                      "dev.warp.Warp-Stable"
+                    ]
+                  }
+                ]
+              },
+              {
+                "description": "fn + U in terminals → Control + U (kill line backward)",
+                "type": "basic",
+                "from": {
+                  "key_code": "u",
+                  "modifiers": {
+                    "mandatory": ["fn"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "u",
+                    "modifiers": ["control"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  },
+                  {
+                    "type": "frontmost_application_if",
+                    "bundle_identifiers": [
+                      "com.apple.Terminal",
+                      "dev.warp.Warp-Stable"
+                    ]
+                  }
+                ]
               }
             ]
           },
@@ -526,15 +766,71 @@
             ]
           },
           {
-            "description": "Windows-to-Mac: fn key common shortcuts",
+            "description": "Windows-to-Mac: fn key alphabet mappings",
             "manipulators": [
+              {
+                "description": "fn + A → Command + A (select all)",
+                "type": "basic",
+                "from": {
+                  "key_code": "a",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "a",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  },
+                  {
+                    "type": "frontmost_application_unless",
+                    "bundle_identifiers": [
+                      "com.apple.Terminal",
+                      "dev.warp.Warp-Stable"
+                    ]
+                  }
+                ]
+              },
+              {
+                "description": "fn + B → Command + B (bold)",
+                "type": "basic",
+                "from": {
+                  "key_code": "b",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "b",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  }
+                ]
+              },
               {
                 "description": "fn + C → Command + C (copy)",
                 "type": "basic",
                 "from": {
                   "key_code": "c",
                   "modifiers": {
-                    "mandatory": ["fn"]
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
                   }
                 },
                 "to": [
@@ -559,12 +855,508 @@
                 ]
               },
               {
+                "description": "fn + D → Command + D (duplicate/bookmark)",
+                "type": "basic",
+                "from": {
+                  "key_code": "d",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "d",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  },
+                  {
+                    "type": "frontmost_application_unless",
+                    "bundle_identifiers": [
+                      "com.apple.Terminal",
+                      "dev.warp.Warp-Stable"
+                    ]
+                  }
+                ]
+              },
+              {
+                "description": "fn + E → Command + E (use selection for find)",
+                "type": "basic",
+                "from": {
+                  "key_code": "e",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "e",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  },
+                  {
+                    "type": "frontmost_application_unless",
+                    "bundle_identifiers": [
+                      "com.apple.Terminal",
+                      "dev.warp.Warp-Stable"
+                    ]
+                  }
+                ]
+              },
+              {
+                "description": "fn + F → Command + F (find)",
+                "type": "basic",
+                "from": {
+                  "key_code": "f",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "f",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  },
+                  {
+                    "type": "frontmost_application_unless",
+                    "bundle_identifiers": [
+                      "com.apple.Terminal",
+                      "dev.warp.Warp-Stable"
+                    ]
+                  }
+                ]
+              },
+              {
+                "description": "fn + G → Command + G (find next)",
+                "type": "basic",
+                "from": {
+                  "key_code": "g",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "g",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "fn + H → Command + H (hide/find replace)",
+                "type": "basic",
+                "from": {
+                  "key_code": "h",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "h",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "fn + I → Command + I (italic)",
+                "type": "basic",
+                "from": {
+                  "key_code": "i",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "i",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "fn + J → Command + J (jump to selection)",
+                "type": "basic",
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "j",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "fn + K → Command + K (add link)",
+                "type": "basic",
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "k",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  },
+                  {
+                    "type": "frontmost_application_unless",
+                    "bundle_identifiers": [
+                      "com.apple.Terminal",
+                      "dev.warp.Warp-Stable"
+                    ]
+                  }
+                ]
+              },
+              {
+                "description": "fn + L → Command + L (location/address bar)",
+                "type": "basic",
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "l",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  },
+                  {
+                    "type": "frontmost_application_unless",
+                    "bundle_identifiers": [
+                      "com.apple.Terminal",
+                      "dev.warp.Warp-Stable"
+                    ]
+                  }
+                ]
+              },
+              {
+                "description": "fn + M → Command + M (minimize)",
+                "type": "basic",
+                "from": {
+                  "key_code": "m",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "m",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "fn + N → Command + N (new)",
+                "type": "basic",
+                "from": {
+                  "key_code": "n",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "n",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  },
+                  {
+                    "type": "frontmost_application_unless",
+                    "bundle_identifiers": [
+                      "com.apple.Terminal",
+                      "dev.warp.Warp-Stable"
+                    ]
+                  }
+                ]
+              },
+              {
+                "description": "fn + O → Command + O (open)",
+                "type": "basic",
+                "from": {
+                  "key_code": "o",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "o",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "fn + P → Command + P (print)",
+                "type": "basic",
+                "from": {
+                  "key_code": "p",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "p",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  },
+                  {
+                    "type": "frontmost_application_unless",
+                    "bundle_identifiers": [
+                      "com.apple.Terminal",
+                      "dev.warp.Warp-Stable"
+                    ]
+                  }
+                ]
+              },
+              {
+                "description": "fn + Q → Command + Q (quit)",
+                "type": "basic",
+                "from": {
+                  "key_code": "q",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "q",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "fn + R → Command + R (reload)",
+                "type": "basic",
+                "from": {
+                  "key_code": "r",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "r",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  },
+                  {
+                    "type": "frontmost_application_unless",
+                    "bundle_identifiers": [
+                      "com.apple.Terminal",
+                      "dev.warp.Warp-Stable"
+                    ]
+                  }
+                ]
+              },
+              {
+                "description": "fn + S → Command + S (save)",
+                "type": "basic",
+                "from": {
+                  "key_code": "s",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "s",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "fn + T → Command + T (new tab)",
+                "type": "basic",
+                "from": {
+                  "key_code": "t",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "t",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "fn + U → Command + U (underline)",
+                "type": "basic",
+                "from": {
+                  "key_code": "u",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "u",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  },
+                  {
+                    "type": "frontmost_application_unless",
+                    "bundle_identifiers": [
+                      "com.apple.Terminal",
+                      "dev.warp.Warp-Stable"
+                    ]
+                  }
+                ]
+              },
+              {
                 "description": "fn + V → Command + V (paste)",
                 "type": "basic",
                 "from": {
                   "key_code": "v",
                   "modifiers": {
-                    "mandatory": ["fn"]
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
                   }
                 },
                 "to": [
@@ -582,12 +1374,37 @@
                 ]
               },
               {
+                "description": "fn + W → Command + W (close tab/window)",
+                "type": "basic",
+                "from": {
+                  "key_code": "w",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "w",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  }
+                ]
+              },
+              {
                 "description": "fn + X → Command + X (cut)",
                 "type": "basic",
                 "from": {
                   "key_code": "x",
                   "modifiers": {
-                    "mandatory": ["fn"]
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
                   }
                 },
                 "to": [
@@ -605,12 +1422,37 @@
                 ]
               },
               {
+                "description": "fn + Y → Command + Y (redo)",
+                "type": "basic",
+                "from": {
+                  "key_code": "y",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "y",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  }
+                ]
+              },
+              {
                 "description": "fn + Z → Command + Z (undo)",
                 "type": "basic",
                 "from": {
                   "key_code": "z",
                   "modifiers": {
-                    "mandatory": ["fn"]
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
                   }
                 },
                 "to": [
@@ -633,19 +1475,25 @@
                     ]
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "description": "Windows-to-Mac: fn key number mappings",
+            "manipulators": [
               {
-                "description": "fn + Y → Command + Y (redo)",
+                "description": "fn + 0 → Command + 0 (tab/bookmark 10)",
                 "type": "basic",
                 "from": {
-                  "key_code": "y",
+                  "key_code": "0",
                   "modifiers": {
-                    "mandatory": ["fn"]
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
                   }
                 },
                 "to": [
                   {
-                    "key_code": "y",
+                    "key_code": "0",
                     "modifiers": ["command"]
                   }
                 ],
@@ -658,17 +1506,18 @@
                 ]
               },
               {
-                "description": "fn + A → Command + A (select all)",
+                "description": "fn + 1 → Command + 1 (tab/bookmark 1)",
                 "type": "basic",
                 "from": {
-                  "key_code": "a",
+                  "key_code": "1",
                   "modifiers": {
-                    "mandatory": ["fn"]
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
                   }
                 },
                 "to": [
                   {
-                    "key_code": "a",
+                    "key_code": "1",
                     "modifiers": ["command"]
                   }
                 ],
@@ -681,17 +1530,18 @@
                 ]
               },
               {
-                "description": "fn + S → Command + S (save)",
+                "description": "fn + 2 → Command + 2 (tab/bookmark 2)",
                 "type": "basic",
                 "from": {
-                  "key_code": "s",
+                  "key_code": "2",
                   "modifiers": {
-                    "mandatory": ["fn"]
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
                   }
                 },
                 "to": [
                   {
-                    "key_code": "s",
+                    "key_code": "2",
                     "modifiers": ["command"]
                   }
                 ],
@@ -704,17 +1554,18 @@
                 ]
               },
               {
-                "description": "fn + N → Command + N (new)",
+                "description": "fn + 3 → Command + 3 (tab/bookmark 3)",
                 "type": "basic",
                 "from": {
-                  "key_code": "n",
+                  "key_code": "3",
                   "modifiers": {
-                    "mandatory": ["fn"]
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
                   }
                 },
                 "to": [
                   {
-                    "key_code": "n",
+                    "key_code": "3",
                     "modifiers": ["command"]
                   }
                 ],
@@ -727,17 +1578,18 @@
                 ]
               },
               {
-                "description": "fn + O → Command + O (open)",
+                "description": "fn + 4 → Command + 4 (tab/bookmark 4)",
                 "type": "basic",
                 "from": {
-                  "key_code": "o",
+                  "key_code": "4",
                   "modifiers": {
-                    "mandatory": ["fn"]
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
                   }
                 },
                 "to": [
                   {
-                    "key_code": "o",
+                    "key_code": "4",
                     "modifiers": ["command"]
                   }
                 ],
@@ -750,17 +1602,18 @@
                 ]
               },
               {
-                "description": "fn + F → Command + F (find)",
+                "description": "fn + 5 → Command + 5 (tab/bookmark 5)",
                 "type": "basic",
                 "from": {
-                  "key_code": "f",
+                  "key_code": "5",
                   "modifiers": {
-                    "mandatory": ["fn"]
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
                   }
                 },
                 "to": [
                   {
-                    "key_code": "f",
+                    "key_code": "5",
                     "modifiers": ["command"]
                   }
                 ],
@@ -773,17 +1626,18 @@
                 ]
               },
               {
-                "description": "fn + W → Command + W (close tab/window)",
+                "description": "fn + 6 → Command + 6 (tab/bookmark 6)",
                 "type": "basic",
                 "from": {
-                  "key_code": "w",
+                  "key_code": "6",
                   "modifiers": {
-                    "mandatory": ["fn"]
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
                   }
                 },
                 "to": [
                   {
-                    "key_code": "w",
+                    "key_code": "6",
                     "modifiers": ["command"]
                   }
                 ],
@@ -796,17 +1650,18 @@
                 ]
               },
               {
-                "description": "fn + T → Command + T (new tab)",
+                "description": "fn + 7 → Command + 7 (tab/bookmark 7)",
                 "type": "basic",
                 "from": {
-                  "key_code": "t",
+                  "key_code": "7",
                   "modifiers": {
-                    "mandatory": ["fn"]
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
                   }
                 },
                 "to": [
                   {
-                    "key_code": "t",
+                    "key_code": "7",
                     "modifiers": ["command"]
                   }
                 ],
@@ -819,18 +1674,312 @@
                 ]
               },
               {
-                "description": "fn + Shift + T → Command + Shift + T (reopen tab)",
+                "description": "fn + 8 → Command + 8 (tab/bookmark 8)",
                 "type": "basic",
                 "from": {
-                  "key_code": "t",
+                  "key_code": "8",
                   "modifiers": {
-                    "mandatory": ["fn", "shift"]
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
                   }
                 },
                 "to": [
                   {
-                    "key_code": "t",
-                    "modifiers": ["command", "shift"]
+                    "key_code": "8",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "fn + 9 → Command + 9 (tab/bookmark 9)",
+                "type": "basic",
+                "from": {
+                  "key_code": "9",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "9",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "description": "Windows-to-Mac: fn key symbol mappings",
+            "manipulators": [
+              {
+                "description": "fn + - → Command + - (zoom out)",
+                "type": "basic",
+                "from": {
+                  "key_code": "hyphen",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "hyphen",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "fn + = → Command + = (zoom in)",
+                "type": "basic",
+                "from": {
+                  "key_code": "equal_sign",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "equal_sign",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "fn + [ → Command + [ (back/outdent)",
+                "type": "basic",
+                "from": {
+                  "key_code": "open_bracket",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "open_bracket",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "fn + ] → Command + ] (forward/indent)",
+                "type": "basic",
+                "from": {
+                  "key_code": "close_bracket",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "close_bracket",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "fn + \\ → Command + \\ (various uses)",
+                "type": "basic",
+                "from": {
+                  "key_code": "backslash",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "backslash",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "fn + ; → Command + ; (spell check)",
+                "type": "basic",
+                "from": {
+                  "key_code": "semicolon",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "semicolon",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "fn + ' → Command + ' (cycle windows)",
+                "type": "basic",
+                "from": {
+                  "key_code": "quote",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "quote",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "fn + , → Command + , (preferences)",
+                "type": "basic",
+                "from": {
+                  "key_code": "comma",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "comma",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "fn + . → Command + . (cancel/stop)",
+                "type": "basic",
+                "from": {
+                  "key_code": "period",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "period",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "fn + / → Command + / (help/comment)",
+                "type": "basic",
+                "from": {
+                  "key_code": "slash",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "slash",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "windows_mapping_enabled",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "fn + ` → Command + ` (cycle app windows)",
+                "type": "basic",
+                "from": {
+                  "key_code": "grave_accent_and_tilde",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "grave_accent_and_tilde",
+                    "modifiers": ["command"]
                   }
                 ],
                 "conditions": [
