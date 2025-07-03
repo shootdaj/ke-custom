@@ -82,6 +82,8 @@ fn + U → Ctrl + U (kill line backward)
 fn + Z → Ctrl + Z (suspend process)
 ```
 
+**All terminal shortcuts work with Caps Lock in any state (ON or OFF).**
+
 ### ✅ **Developer Navigation (Perfect for VSCode/Cursor)**
 - `fn + Left/Right Arrow` → Word skipping
 - `fn + Shift + Left/Right Arrow` → Word selection
@@ -96,6 +98,8 @@ fn + Z → Ctrl + Z (suspend process)
 - `fn + Control + Left/Right Arrow` → Document start/end
 - `fn + Control + Shift + Left/Right Arrow` → Document start/end with selection
 
+**All navigation shortcuts work with Caps Lock in any state (ON or OFF).**
+
 ### ✅ **Tab Management (Simple Reliable Mapping)**
 - `fn + Tab` → `Control + Tab` (single tab switch forward)
 - `fn + Shift + Tab` → `Control + Shift + Tab` (single tab switch backward)
@@ -105,6 +109,7 @@ fn + Z → Ctrl + Z (suspend process)
   - No interference with other fn key combinations (fn + backspace, etc.)
   - Reliable single-press tab switching
   - Maintains all existing keyboard functionality
+  - Works with Caps Lock in any state (ON or OFF)
 
 ### ✅ **Shift Variant Support**
 Every mapping automatically supports shift combinations:
@@ -112,6 +117,8 @@ Every mapping automatically supports shift combinations:
 - `fn + Shift + Z` → `Command + Shift + Z` (redo)
 - `fn + Shift + [number]` → `Command + Shift + [number]`
 - And hundreds more combinations
+
+**All shift combinations work with Caps Lock in any state (ON or OFF).**
 
 ### ✅ **Function Keys Preserved**
 - `fn + F1-F12` → Keep native Mac behavior (brightness, volume, etc.)
@@ -163,6 +170,8 @@ This installs a pre-commit hook that:
 - **Disable**: `fn + Control + Option + Command + D`
 
 You'll see a notification when toggling the mapping on/off.
+
+**Note**: Toggle controls work with Caps Lock in any state (ON or OFF).
 
 ### BetterTouchTool Integration
 Since Option keys now act as Command keys, update your BetterTouchTool shortcuts:
@@ -304,7 +313,8 @@ Since Option keys now act as Command keys, update your BetterTouchTool shortcuts
 - **Fixed in latest version**: All fn key mappings now include `caps_lock` as an optional modifier
 - This resolves the issue where fn key combinations don't work when Caps Lock is enabled
 - The fix addresses Karabiner Elements 15.1.0+ breaking changes related to Caps Lock accidental keystroke prevention
-- **What was fixed**: All 47 fn key mappings + arrow keys + Control+arrow combinations now work with Caps Lock active
+- **What was fixed**: All 72 fn key mappings + Control+arrow combinations + toggle controls now work with Caps Lock active
+- **Complete coverage**: Regular fn mappings, terminal fn mappings, arrow keys, and system toggle controls
 - **Root cause**: When Caps Lock is active, it becomes part of the modifier state and mappings must explicitly include `caps_lock` as optional
 - **Testing**: All functionality tested with both Caps Lock ON and OFF states
 
