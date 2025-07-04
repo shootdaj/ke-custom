@@ -100,16 +100,7 @@ fn + Z → Ctrl + Z (suspend process)
 
 **All navigation shortcuts work with Caps Lock in any state (ON or OFF).**
 
-### ✅ **Tab Management (Simple Reliable Mapping)**
-- `fn + Tab` → `Control + Tab` (single tab switch forward)
-- `fn + Shift + Tab` → `Control + Shift + Tab` (single tab switch backward)
-- **Simple and reliable**: Direct one-to-one mapping that preserves other fn key functionality
-- **Benefits**: 
-  - Works consistently across all applications
-  - No interference with other fn key combinations (fn + backspace, etc.)
-  - Reliable single-press tab switching
-  - Maintains all existing keyboard functionality
-  - Works with Caps Lock in any state (ON or OFF)
+
 
 ### ✅ **Shift Variant Support**
 Every mapping automatically supports shift combinations:
@@ -122,6 +113,11 @@ Every mapping automatically supports shift combinations:
 
 ### ✅ **Function Keys Preserved**
 - `fn + F1-F12` → Keep native Mac behavior (brightness, volume, etc.)
+
+### ✅ **Default macOS Page Up/Down Override**
+- `fn + Up Arrow` → **Up Arrow** (prevents default macOS Page Up behavior)
+- `fn + Down Arrow` → **Down Arrow** (prevents default macOS Page Down behavior)
+- This prevents accidental page scrolling when using fn key combinations
 
 ### ✅ **Window Management Ready**
 - Option keys work as Windows Meta key for window snapping
@@ -162,6 +158,38 @@ This installs a pre-commit hook that:
 - **Prompts for confirmation** if no development session is documented  
 - **Verifies README updates** when `karabiner.json` is modified
 - **Provides helpful workflow reminders** for proper documentation
+
+## Profile-Based Development
+
+This project uses **automated multi-profile deployment** for safer configuration management:
+
+### **Development Workflow**
+- **Never overwrite** existing configurations
+- **Always deploy as new profiles** with timestamps and descriptions
+- **Automated deployment**: Just ask the AI to "deploy" - it handles everything
+- **Easy rollback**: Switch profiles in Karabiner Elements UI
+- **Change tracking**: All changes documented in `docs/version-history.md`
+- **Smart analysis**: AI analyzes changes and generates appropriate descriptions
+
+### **Deployment Commands**
+```bash
+# Test deployment (for experimentation)
+./scripts/deploy-test.sh
+
+# Final deployment (for production)
+./scripts/deploy-final.sh
+
+# Build version history (documentation)
+# Just say "build-version-history" to the AI
+```
+
+### **Benefits**
+- ✅ **Instant rollback** to any previous version
+- ✅ **Side-by-side testing** of different configurations
+- ✅ **Safe experimentation** without losing working setups
+- ✅ **Automated change tracking** with human-readable summaries
+- ✅ **Easy A/B testing** between different approaches
+- ✅ **Zero-effort deployment** - just say "deploy"
 
 ## Usage
 
@@ -208,10 +236,6 @@ Since Option keys now act as Command keys, update your BetterTouchTool shortcuts
 ### **Browser/App Navigation**
 | Windows Shortcut | Mac Keys (with mapping) | Result |
 |------------------|-------------------------|---------|
-| `Ctrl + Tab` | `fn + Tab` | Opens tab switcher and moves forward (starts tab mode) |
-| `Ctrl + Shift + Tab` | `fn + Shift + Tab` | Opens tab switcher and moves backward (starts tab mode) |
-| *Continue navigation* | `Tab` (after `fn + Tab`) | Navigate forward in tab switcher |
-| *Continue navigation* | `Shift + Tab` (after `fn + Tab`) | Navigate backward in tab switcher |
 | `Ctrl + W` | `fn + W` | Close tab |
 | `Ctrl + T` | `fn + T` | New tab |
 | `Ctrl + Shift + T` | `fn + Shift + T` | Reopen tab |
@@ -303,6 +327,11 @@ Since Option keys now act as Command keys, update your BetterTouchTool shortcuts
 - Function keys (F1-F12) should work normally with `fn` modifier
 - If not working, check System Preferences → Keyboard → "Use F1, F2, etc. keys as standard function keys"
 
+### fn + Up/Down Arrow Not Working
+- `fn + Up Arrow` and `fn + Down Arrow` now send regular Up/Down Arrow commands instead of default macOS Page Up/Page Down behavior
+- If you need page scrolling, use `Control + Up Arrow` (Page Up) and `Control + Down Arrow` (Page Down) instead
+- This prevents accidental page scrolling when using fn key combinations
+
 ### Caps Lock LED Not Working
 - The configuration includes proper Caps Lock LED control (`manipulate_caps_lock_led: true`)
 - This ensures the Caps Lock indicator light functions normally
@@ -322,13 +351,7 @@ Since Option keys now act as Command keys, update your BetterTouchTool shortcuts
 - Verify Terminal.app and Warp bundle identifiers are correct
 - Check if you're using a different terminal app (add its bundle identifier to the config)
 
-### Tab Switching Behavior
-The tab switching functionality uses **simple reliable mapping**:
-- **Working**: `fn + Tab` → `Control + Tab` (single switch forward)
-- **Working**: `fn + Shift + Tab` → `Control + Shift + Tab` (single switch backward)
-- **Reliable**: Direct one-to-one mapping with no complex state management
-- **Compatible**: Works consistently across all applications without interference
-- **Note**: This provides reliable single-press tab switching. For Windows-style continuous navigation, macOS's tab switcher behavior fundamentally requires physical modifier key holds that are difficult to simulate reliably with Karabiner Elements
+
 
 ### Finding App Bundle Identifiers
 ```bash
@@ -382,6 +405,8 @@ ke-custom/
 │       ├── README.md           # Chat logging system documentation
 │       └── *.md                # Individual conversation exports
 ├── scripts/                    # Helper scripts
+│   ├── deploy-test.sh         # Test deployment script (draft profiles)
+│   ├── deploy-final.sh        # Final deployment script (production profiles)
 │   ├── add-chat-log.sh        # Script to create new chat log entries
 │   └── setup-git-hooks.sh     # Script to install git hooks for contributors
 └── .gitignore                 # Git ignore rules

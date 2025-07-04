@@ -158,7 +158,27 @@ Low Priority Section:
 ├── Catch-all transformations
 ```
 
-### **2. Rule Design Patterns**
+### **2. Deployment System Best Practices**
+
+**Simplified Workflow:**
+- **Test deployments**: Use `./scripts/deploy-test.sh` for experimentation
+- **Final deployments**: Use `./scripts/deploy-final.sh` for production
+- **Documentation**: Use "build-version-history" command for change tracking
+- **Avoid complexity**: Remove old scripts to prevent confusion
+
+**Profile Management:**
+- **Git-based profiles**: Use git history for reliable profile creation
+- **Instant rollback**: Switch profiles in Karabiner Elements UI
+- **Version tracking**: All changes documented in `docs/version-history.md`
+- **Clean separation**: Working file vs final file distinction
+
+**Documentation Synchronization:**
+- **Always update README.md** when `karabiner.json` changes
+- **Maintain version history** for all deployments
+- **Track current issues** in dedicated file
+- **Keep technical docs** synchronized with implementation
+
+### **3. Rule Design Patterns**
 
 **Pattern: Specific Key Combinations**
 ```json
@@ -200,7 +220,7 @@ Low Priority Section:
 }
 ```
 
-### **3. Testing and Validation**
+### **4. Testing and Validation**
 
 **Test Priority:**
 1. **Critical combinations first:** Tab switching, word navigation, copy/paste

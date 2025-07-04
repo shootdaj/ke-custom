@@ -6,7 +6,7 @@
 - Modified keyboard behavior
 - Added or removed rules
 - Changes to terminal-specific behavior
-- Updates to toggle combinations
+- Updates to toggle combinations (fn + Control + Option + Command + E/D)
 - Any configuration modifications
 
 The README must accurately document all functionality present in the karabiner.json configuration.
@@ -17,11 +17,21 @@ The README must accurately document all functionality present in the karabiner.j
 - Don't remove existing comments that are already present
 - When editing JSON files, maintain proper formatting and structure
 
+## Multi-Profile Development Workflow
+**CRITICAL**: This project uses a multi-profile system that NEVER overwrites existing configurations:
+- All deployments create NEW profiles with timestamps
+- Original configurations are preserved as historical profiles
+- 27+ historical profiles available for instant rollback via Karabiner Elements UI
+- Safe experimentation with immediate revert capability
+- A/B testing between different configuration approaches
+- Profile switching for testing different keyboard mapping strategies
+
 ## Backup Requirements
-**CRITICAL**: Before updating the running Karabiner Elements configuration file (`~/.config/karabiner/karabiner.json`), you MUST create a timestamped backup:
-- Always backup the current configuration before testing changes
+**CRITICAL**: Before deploying any configuration changes, you MUST create a timestamped backup:
+- Always backup the current `~/.config/karabiner/karabiner.json` file before deployment
 - Use format: `~/.config/karabiner/karabiner.json.backup.YYYY-MM-DD_HH-MM-SS`
-- This ensures we can quickly revert if the new configuration has issues
+- This protects against deployment script failures or file corruption
+- The deployment script handles this automatically, but verify it's working
 - Never skip this step when deploying configuration changes
 
 ## Karabiner Restart Requirements
@@ -50,6 +60,37 @@ When making configuration changes:
 3. Verify toggle functionality works
 4. Check that shift variants work correctly
 5. Ensure no conflicts with existing shortcuts
+
+## Simplified Deployment Workflow
+**CRITICAL**: This project uses a simplified three-stage deployment system:
+
+### Test Deployments (Testing/Iteration)
+When the user says "deploy-test" or "test deploy":
+1. Run `./scripts/deploy-test.sh` for experimentation
+2. Creates draft profiles for testing
+3. Does NOT update version history
+4. Can deploy multiple times without ceremony
+5. For testing and iteration only
+
+### Final Deployments (Production)
+When the user says "deploy" or "deploy-final":
+1. Run `./scripts/deploy-final.sh` for production deployment
+2. Creates timestamped profile with format: "WinKeyMap: YYYY-MM-DD HH:MM:SS"
+3. Updates `karabiner.final.json` with the new profile
+4. Restarts Karabiner Elements automatically
+5. Ready for version history documentation
+
+### Version History Documentation
+When the user says "build-version-history":
+1. Analyze changes between previous and current final versions
+2. Generate human-readable change summary
+3. Update `docs/version-history.md` with:
+   - Changes made
+   - Functionality impact
+   - Testing notes
+4. Update `README.md` if needed to reflect new functionality
+
+The deployment system uses a multi-profile approach with historical configurations accessible via Karabiner Elements UI dropdown. Only finalized deployments are tracked in version history. All final profile names follow the "WinKeyMap: YYYY-MM-DD HH:MM:SS" convention.
 
 ## Communication Style
 - Ask clarifying questions when instructions are unclear
