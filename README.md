@@ -202,9 +202,13 @@ You'll see a notification when toggling the mapping on/off.
 **Note**: Toggle controls work with Caps Lock in any state (ON or OFF).
 
 ### BetterTouchTool Integration
-Since Option keys now act as Command keys, update your BetterTouchTool shortcuts:
-- Change window snapping shortcuts from `Option + Arrow` to `Command + Arrow`
-- Or disable BetterTouchTool's window snapping and use a dedicated window manager
+To avoid collisions with fn-based word navigation:
+- `fn + Left/Right` emits `Right Option + Left/Right` (word navigation)
+- Bind BTT Back/Forward triggers to `Left Option + Left/Right` only
+- Ensure BTT shortcuts are recorded with the left Option key specifically (not “any Option”)
+- Remove any generic `Option + Arrow` triggers
+
+This keeps universal Back/Forward on Command (remapped to Left Option) while fn-based word navigation remains unaffected and uses macOS’s native key repeat.
 
 ## Complete Shortcuts Reference
 
