@@ -147,6 +147,23 @@ Every mapping automatically supports shift combinations:
    - Open Karabiner Elements
    - The "Windows-to-Mac Keyboard Mapping" profile should be active
 
+### BetterTouchTool Setup (Optional)
+
+This repo also includes BetterTouchTool configuration for window management and additional shortcuts.
+
+1. **Install BetterTouchTool** from [folivora.ai](https://folivora.ai/)
+
+2. **Import the preset**:
+   ```bash
+   ./scripts/btt-import.sh
+   ```
+   Or manually: BTT Preferences → Manage Presets → Import → select `btt/btt-preset.bttpreset`
+
+3. **To save your BTT changes back to the repo**:
+   ```bash
+   ./scripts/btt-export.sh
+   ```
+
 ## Usage
 
 ### Toggle On/Off
@@ -360,12 +377,16 @@ ke-custom/
 ├── karabiner.json              # Main Karabiner Elements configuration
 ├── README.md                   # This file
 ├── CLAUDE.md                   # AI assistant guidance
+├── btt/
+│   └── btt-preset.bttpreset    # BetterTouchTool configuration
 ├── docs/
 │   ├── karabiner-technical-learnings.md  # Technical insights and best practices
 │   └── current-issues.md       # Known issues tracker
 └── scripts/
-    ├── deploy.sh               # Backup and deploy config
-    └── revert.sh               # Restore previous config
+    ├── deploy.sh               # Backup and deploy Karabiner config
+    ├── revert.sh               # Restore previous Karabiner config
+    ├── btt-export.sh           # Export BTT config to repo
+    └── btt-import.sh           # Import BTT config on new machine
 ```
 
 ## Contributing

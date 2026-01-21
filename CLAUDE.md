@@ -113,6 +113,7 @@ osascript -e 'quit app "Karabiner-Elements"' && sleep 2 && open -a "Karabiner-El
 ### Core Files
 
 - **`karabiner.json`** - The configuration file with all keyboard mappings
+- **`btt/btt-preset.bttpreset`** - BetterTouchTool configuration
 - **`README.md`** - User-facing documentation (MUST stay in sync with karabiner.json)
 
 ### Documentation
@@ -121,8 +122,10 @@ osascript -e 'quit app "Karabiner-Elements"' && sleep 2 && open -a "Karabiner-El
 
 ### Scripts
 
-- **`scripts/deploy.sh`** - Backup current config and deploy new one
-- **`scripts/revert.sh`** - Restore previous config from backup
+- **`scripts/deploy.sh`** - Backup current Karabiner config and deploy new one
+- **`scripts/revert.sh`** - Restore previous Karabiner config from backup
+- **`scripts/btt-export.sh`** - Export BetterTouchTool config to repo
+- **`scripts/btt-import.sh`** - Import BetterTouchTool config on new machine
 
 ## Configuration Structure
 
