@@ -125,7 +125,8 @@ osascript -e 'quit app "Karabiner-Elements"' && sleep 2 && open -a "Karabiner-El
 - **`scripts/deploy.sh`** - Backup current Karabiner config and deploy new one
 - **`scripts/revert.sh`** - Restore previous Karabiner config from backup
 - **`scripts/btt-export.sh`** - Export BetterTouchTool config to repo
-- **`scripts/btt-import.sh`** - Import BetterTouchTool config on new machine
+- **`scripts/btt-import.sh`** - Import BetterTouchTool config (adds to existing)
+- **`scripts/btt-clean-import.sh`** - DELETE all BTT config and import fresh
 
 ## Configuration Structure
 

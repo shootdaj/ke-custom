@@ -153,11 +153,19 @@ This repo also includes BetterTouchTool configuration for window management and 
 
 1. **Install BetterTouchTool** from [folivora.ai](https://folivora.ai/)
 
-2. **Import the preset**:
+2. **Import the preset** (choose one):
+
+   **Option A - Clean import (replaces everything):**
+   ```bash
+   ./scripts/btt-clean-import.sh
+   ```
+   ⚠️ This DELETES all existing BTT config first. Use for fresh setup.
+
+   **Option B - Add to existing config:**
    ```bash
    ./scripts/btt-import.sh
    ```
-   Or manually: BTT Preferences → Manage Presets → Import → select `btt/btt-preset.bttpreset`
+   This adds to your existing BTT config (may cause duplicates).
 
 3. **To save your BTT changes back to the repo**:
    ```bash
@@ -386,7 +394,8 @@ ke-custom/
     ├── deploy.sh               # Backup and deploy Karabiner config
     ├── revert.sh               # Restore previous Karabiner config
     ├── btt-export.sh           # Export BTT config to repo
-    └── btt-import.sh           # Import BTT config on new machine
+    ├── btt-import.sh           # Import BTT config (adds to existing)
+    └── btt-clean-import.sh     # DELETE all BTT config and import fresh
 ```
 
 ## Contributing
