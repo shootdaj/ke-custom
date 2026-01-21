@@ -91,6 +91,8 @@ fn + Z → Ctrl + Z (suspend process)
 - `Right Option + Shift + Left/Right Arrow` → Word selection
 - `fn + Backspace` → Delete previous word
 - `Right Option + Backspace` → Delete previous word
+- `Control + Backspace` → Delete character forward (like Windows Delete key)
+- `Control + fn + Backspace` → Delete word forward
 - `Control + Left/Right Arrow` → Line start/end
 - `Control + Shift + Left/Right Arrow` → Line start/end with selection
 - `Control + Up/Down Arrow` → Page up/down
@@ -144,52 +146,6 @@ Every mapping automatically supports shift combinations:
 3. **Restart Karabiner Elements** or reload the configuration:
    - Open Karabiner Elements
    - The "Windows-to-Mac Keyboard Mapping" profile should be active
-
-### For Contributors
-If you plan to contribute to this project, set up the git hooks for proper development workflow:
-
-```bash
-# Install git hooks that encourage documentation
-./scripts/setup-git-hooks.sh
-```
-
-This installs a pre-commit hook that:
-- **Checks for chat history** when committing code changes
-- **Prompts for confirmation** if no development session is documented  
-- **Verifies README updates** when `karabiner.json` is modified
-- **Provides helpful workflow reminders** for proper documentation
-
-## Profile-Based Development
-
-This project uses **automated multi-profile deployment** for safer configuration management:
-
-### **Development Workflow**
-- **Never overwrite** existing configurations
-- **Always deploy as new profiles** with timestamps and descriptions
-- **Automated deployment**: Just ask the AI to "deploy" - it handles everything
-- **Easy rollback**: Switch profiles in Karabiner Elements UI
-- **Change tracking**: All changes documented in `docs/version-history.md`
-- **Smart analysis**: AI analyzes changes and generates appropriate descriptions
-
-### **Deployment Commands**
-```bash
-# Test deployment (for experimentation)
-./scripts/deploy-test.sh
-
-# Final deployment (for production)
-./scripts/deploy-final.sh
-
-# Build version history (documentation)
-# Just say "build-version-history" to the AI
-```
-
-### **Benefits**
-- ✅ **Instant rollback** to any previous version
-- ✅ **Side-by-side testing** of different configurations
-- ✅ **Safe experimentation** without losing working setups
-- ✅ **Automated change tracking** with human-readable summaries
-- ✅ **Easy A/B testing** between different approaches
-- ✅ **Zero-effort deployment** - just say "deploy"
 
 ## Usage
 
@@ -265,6 +221,8 @@ This keeps universal Back/Forward on Command (remapped to Left Option) while fn-
 | `Ctrl + Right` | `Right Option + Right` | Word skip right |
 | `Ctrl + Backspace` | `fn + Backspace` | Delete previous word |
 | `Ctrl + Backspace` | `Right Option + Backspace` | Delete previous word |
+| `Delete` | `Control + Backspace` | Delete character forward |
+| `Ctrl + Delete` | `Control + fn + Backspace` | Delete word forward |
 | `Home` | `Control + Left` | Line start |
 | `End` | `Control + Right` | Line end |
 | `Ctrl + Home` | `fn + Control + Left` | Document start |
@@ -400,66 +358,15 @@ Change the toggle combinations in the "System toggle controls" section.
 ```
 ke-custom/
 ├── karabiner.json              # Main Karabiner Elements configuration
-├── README.md                   # This file - installation and usage guide
-├── docs/                       # Documentation and development logs
-│   ├── karabiner-elements-plan.md     # Detailed development plan and specifications
-│   ├── karabiner-technical-learnings.md # Technical insights and best practices
-│   ├── tab-switching-progress-report.md # Detailed tab switching implementation history
-│   └── chats/                  # AI conversation logs from development sessions
-│       ├── README.md           # Chat logging system documentation
-│       └── *.md                # Individual conversation exports
-├── scripts/                    # Helper scripts
-│   ├── deploy-test.sh         # Test deployment script (draft profiles)
-│   ├── deploy-final.sh        # Final deployment script (production profiles)
-│   ├── add-chat-log.sh        # Script to create new chat log entries
-│   └── setup-git-hooks.sh     # Script to install git hooks for contributors
-└── .gitignore                 # Git ignore rules
+├── README.md                   # This file
+├── CLAUDE.md                   # AI assistant guidance
+├── docs/
+│   ├── karabiner-technical-learnings.md  # Technical insights and best practices
+│   └── current-issues.md       # Known issues tracker
+└── scripts/
+    ├── deploy.sh               # Backup and deploy config
+    └── revert.sh               # Restore previous config
 ```
-
-## Documentation
-
-The [`docs/`](./docs/) folder contains comprehensive documentation for this project:
-
-### Development Plan
-- [`docs/karabiner-elements-plan.md`](./docs/karabiner-elements-plan.md) - Detailed technical specifications, development roadmap, and design decisions
-
-### Technical Learnings
-- [`docs/karabiner-technical-learnings.md`](./docs/karabiner-technical-learnings.md) - Technical insights, best practices, and lessons learned including:
-  - **Rule processing fundamentals** and priority handling
-  - **Common pitfalls** and how to avoid them
-  - **Best practices** for rule organization and design patterns
-  - **Real-world examples** and debugging techniques
-  - **Future development guidelines** for adding new features
-
-### Implementation History
-- [`docs/tab-switching-progress-report.md`](./docs/tab-switching-progress-report.md) - Detailed history of Windows-style tab switching implementation attempts
-
-### Development Logs  
-- [`docs/chats/`](./docs/chats/) - AI-assisted development session logs that provide:
-  - **Context** for design decisions and implementation choices
-  - **Troubleshooting history** for common issues
-  - **Evolution** of the configuration over time
-  - **Reference** for future enhancements
-
-#### Adding New Chat Logs
-To add a new development chat log:
-
-1. **Export from Cursor**: 
-   - Click the menu (⋮) in the chat panel → "Export Chat" 
-   - Save the `.md` file to `docs/chats/exported/`
-
-2. **Run the script**: 
-   ```bash
-   ./scripts/add-chat-log.sh
-   ```
-   The script automatically finds and processes the latest exported file
-
-3. **Automatic organization**: 
-   - Creates timestamped file: `docs/chats/YYYY-MM-DD_HH-MM-SS.md`
-   - Removes the original export file
-   - Ready for git commit
-
-See [`docs/chats/README.md`](./docs/chats/README.md) for detailed workflow and best practices.
 
 ## Contributing
 

@@ -24,34 +24,26 @@ This is a **Karabiner Elements configuration** that transforms a MacBook keyboar
 
 The README must accurately document all functionality present in the karabiner.json configuration.
 
-### 2. Deployment Workflow (CRITICAL)
+### 2. Deployment Workflow
 
-This project uses a **multi-profile system** that NEVER overwrites configurations:
+Simple backup → deploy → test → keep or revert:
 
-**Test Deployments** (experimentation/iteration):
+**Deploy:**
 ```bash
-./scripts/deploy-test.sh
+./scripts/deploy.sh
 ```
-- Creates draft profiles with "| Draft" suffix
-- For testing and iteration only
-- Does NOT update version history
-- Can deploy multiple times without ceremony
+- Backs up current live config to `~/.config/karabiner/karabiner.json.backup`
+- Copies `karabiner.json` to live config
+- Restarts Karabiner Elements
 
-**Final Deployments** (production):
+**Revert (if test fails):**
 ```bash
-./scripts/deploy-final.sh
+./scripts/revert.sh
 ```
-- Creates timestamped profile: "WinKeyMap: YYYY-MM-DD HH:MM:SS"
-- Updates `karabiner.final.json`
-- Restarts Karabiner Elements automatically
-- Ready for version history documentation
+- Restores from backup
+- Restarts Karabiner Elements
 
-**Version History Documentation**:
-When user says "build-version-history":
-1. Analyze changes between previous and current final versions
-2. Generate human-readable change summary
-3. Update `docs/version-history.md` with changes, functionality impact, and testing notes
-4. Update `README.md` if needed
+That's it. No profiles, no ceremony.
 
 ### 3. Karabiner Configuration Rules
 
@@ -92,19 +84,14 @@ Example:
 
 ## Development Commands
 
-**Deploy test configuration:**
+**Deploy configuration:**
 ```bash
-./scripts/deploy-test.sh
+./scripts/deploy.sh
 ```
 
-**Deploy final configuration:**
+**Revert to previous config:**
 ```bash
-./scripts/deploy-final.sh
-```
-
-**Setup git hooks** (for contributors):
-```bash
-./scripts/setup-git-hooks.sh
+./scripts/revert.sh
 ```
 
 **Find app bundle identifiers** (for adding app-specific rules):
@@ -125,25 +112,17 @@ osascript -e 'quit app "Karabiner-Elements"' && sleep 2 && open -a "Karabiner-El
 
 ### Core Files
 
-- **`karabiner.json`** - Working configuration file with all keyboard mappings
-- **`karabiner.final.json`** - Production configuration with all deployed profiles
+- **`karabiner.json`** - The configuration file with all keyboard mappings
 - **`README.md`** - User-facing documentation (MUST stay in sync with karabiner.json)
-- **`.cursorrules`** - Development workflow rules and requirements
 
-### Documentation Structure
+### Documentation
 
-- **`docs/karabiner-technical-learnings.md`** - Technical insights, best practices, Karabiner rule processing fundamentals
-- **`docs/version-history.md`** - Change tracking for all deployed profiles
-- **`docs/karabiner-elements-plan.md`** - Development plan and specifications
-- **`docs/tab-switching-progress-report.md`** - Implementation history (reference for past attempts)
-- **`docs/chats/`** - AI development session logs for context
+- **`docs/karabiner-technical-learnings.md`** - Technical insights and Karabiner rule processing fundamentals
 
 ### Scripts
 
-- **`scripts/deploy-test.sh`** - Deploy draft profiles for testing
-- **`scripts/deploy-final.sh`** - Deploy production profiles with timestamps
-- **`scripts/add-chat-log.sh`** - Add development session logs
-- **`scripts/setup-git-hooks.sh`** - Install git hooks for documentation workflow
+- **`scripts/deploy.sh`** - Backup current config and deploy new one
+- **`scripts/revert.sh`** - Restore previous config from backup
 
 ## Configuration Structure
 
@@ -183,13 +162,6 @@ When modifying configurations:
 5. **Test with Caps Lock both ON and OFF**
 6. Ensure no conflicts with existing shortcuts
 
-## Profile Management
-
-- **27+ historical profiles** available in Karabiner Elements UI
-- Switch profiles in UI dropdown for instant rollback
-- Git history provides reliable profile creation
-- All changes documented in `docs/version-history.md`
-
 ## Key Technical Insights
 
 1. **First match wins** - Rule order determines behavior
@@ -204,11 +176,9 @@ When modifying configurations:
 1. Determine priority level (where in rule order?)
 2. Add to appropriate section in `karabiner.json`
 3. Include `"optional": ["caps_lock"]` in modifiers
-4. Test with Caps Lock ON and OFF
-5. Update `README.md` to document the mapping
-6. Deploy with `./scripts/deploy-test.sh` first
-7. After testing, deploy with `./scripts/deploy-final.sh`
-8. Run "build-version-history" to document changes
+4. Deploy with `./scripts/deploy.sh`
+5. Test - if it fails, run `./scripts/revert.sh`
+6. Update `README.md` to document the mapping
 
 **Adding app-specific behavior:**
 1. Get bundle identifier using osascript or mdls
