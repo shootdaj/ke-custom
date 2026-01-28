@@ -1,5 +1,21 @@
 # Progress
 
+## 2026-01-28 Session
+
+### Completed
+- Deployed Karabiner config with forward delete mappings
+- Updated BTT Warp shortcut to open new window instead of just launching app
+  - Uses AppleScript: `do shell script "open -n -a Warp"`
+- Created BTT backup workflow with video walkthrough
+- Tested BTT clean import/export cycle
+
+### Current State
+- Karabiner deployed with Control+Backspace mappings
+- BTT preset updated with Warp new window functionality
+- All changes committed and pushed
+
+---
+
 ## 2026-01-22 Session
 
 ### Completed
