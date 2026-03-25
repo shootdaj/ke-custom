@@ -89,6 +89,7 @@ fn + Z → Ctrl + Z (suspend process)
 - `fn + Shift + Left/Right Arrow` → Word selection
 - `Right Option + Left/Right Arrow` → Word skipping
 - `Right Option + Shift + Left/Right Arrow` → Word selection
+- `Option + Backspace` → Ctrl+W in Warp (tmux word-delete)
 - `fn + Backspace` → Delete previous word
 - `Right Option + Backspace` → Delete previous word
 - `Control + Backspace` → Delete character forward (like Windows Delete key)
