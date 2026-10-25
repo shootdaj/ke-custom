@@ -181,6 +181,8 @@ This repo also includes BetterTouchTool configuration for window management and 
 
 You'll see a notification when toggling the mapping on/off.
 
+The mapping is **on by default**. It comes back on after sleep, wake, restart or a Karabiner config reload; the disable hotkey only turns it off until the next wake. (Karabiner 16.2+ restarts its grabber on every wake, which wipes in-memory variables, so the gate is `windows_mapping_disabled != 1` rather than `windows_mapping_enabled == 1`. History: `docs/2026-10-25-sleep-wake-toggle-fix.md`.)
+
 **Note**: Toggle controls work with Caps Lock in any state (ON or OFF).
 
 ### BetterTouchTool Integration
@@ -373,7 +375,7 @@ Change the toggle combinations in the "System toggle controls" section.
 
 - **Configuration Format**: Karabiner Elements JSON
 - **Rule Priority**: Higher rules override lower ones
-- **Variables**: Uses `windows_mapping_enabled` to control activation
+- **Variables**: Uses `windows_mapping_disabled` (unset/0 = active) so the mapping is on by default and survives sleep/wake
 - **Coverage**: Complete keyboard mapping - 26 letters + 10 numbers + 12 symbols = 48 keys
 - **Shift Support**: All 48 base mappings × 2 (with/without shift) = 96+ combinations
 - **Context Awareness**: Smart terminal vs regular app detection
