@@ -1,5 +1,20 @@
 # Progress
 
+## 2026-10-25 Session
+
+### Completed
+- Fixed mapping turning OFF after every sleep/wake since the Karabiner 16.3.0 upgrade
+  - Root cause: Karabiner 16.2+ restarts the device grabber on wake, wiping in-memory variables; the mapping was gated on `windows_mapping_enabled == 1`, which only the E hotkey ever set
+  - Fix: inverted the gate to `variable_unless windows_mapping_disabled == 1` so unset = ON; E/D hotkeys now clear/set `windows_mapping_disabled`; dropped the bogus profile-level `variables` key
+  - Full write-up: `docs/2026-10-25-sleep-wake-toggle-fix.md`
+- Synced the live `~/.config/karabiner/karabiner.json` back into the repo (it also carries the `global` notification settings that were only live before)
+
+### Current State
+- Mapping is on by default and survives sleep/wake; D hotkey disables until next wake
+- Deployed live on 2026-10-25 10:05, config reloaded with no errors
+
+---
+
 ## 2026-01-28 Session
 
 ### Completed
