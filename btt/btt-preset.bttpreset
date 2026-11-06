@@ -2546,7 +2546,7 @@
               ]
             },
             {
-              "BTTLastUpdatedAt": 1769558276.982143,
+              "BTTLastUpdatedAt": 1793927525.9385889,
               "BTTTriggerType": 0,
               "BTTTriggerParentUUID": "68CEEA39-5AE4-4D2C-832D-107C4544EA0B",
               "BTTTriggerClass": "BTTTriggerTypeKeyboardShortcut",
@@ -2575,7 +2575,8 @@
                   "BTTOrder": 5,
                   "BTTAutoAdaptToKeyboardLayout": 0
                 }
-              ]
+              ],
+              "BTTNotes": "physical Option+Up (Karabiner on) = Maximize Window; macOS sees Cmd+Up"
             },
             {
               "BTTLastUpdatedAt": 1769558276.981997,
@@ -2891,6 +2892,48 @@
                   "BTTAutoAdaptToKeyboardLayout": 0
                 }
               ]
+            },
+            {
+              "BTTLastUpdatedAt": 1793927525.9385889,
+              "BTTTriggerType": 0,
+              "BTTTriggerParentUUID": "68CEEA39-5AE4-4D2C-832D-107C4544EA0B",
+              "BTTTriggerClass": "BTTTriggerTypeKeyboardShortcut",
+              "BTTUUID": "1EEC4183-EFDB-4950-B2EC-006D99ED801E",
+              "BTTPredefinedActionType": 19,
+              "BTTPredefinedActionName": "Maximize Window Left",
+              "BTTAdditionalConfiguration": "9437192",
+              "BTTShortcutKeyboardType": 0,
+              "BTTTriggerOnDown": 1,
+              "BTTLayoutIndependentChar": "LEFT",
+              "BTTEnabled2": 1,
+              "BTTEnabled": 1,
+              "BTTShortcutKeyCode": 123,
+              "BTTShortcutAdvancedModifierKeys": "9437192",
+              "BTTShortcutModifierKeys": 9437184,
+              "BTTOrder": 201,
+              "BTTAutoAdaptToKeyboardLayout": 0,
+              "BTTNotes": "physical Option+Left (Karabiner on) = Maximize Window Left; macOS sees Cmd+Left (added 2026-11-06)"
+            },
+            {
+              "BTTLastUpdatedAt": 1793927525.9385889,
+              "BTTTriggerType": 0,
+              "BTTTriggerParentUUID": "68CEEA39-5AE4-4D2C-832D-107C4544EA0B",
+              "BTTTriggerClass": "BTTTriggerTypeKeyboardShortcut",
+              "BTTUUID": "46D4993C-2C32-4F94-BC62-D78BFF33A43B",
+              "BTTPredefinedActionType": 20,
+              "BTTPredefinedActionName": "Maximize Window Right",
+              "BTTAdditionalConfiguration": "9437192",
+              "BTTShortcutKeyboardType": 0,
+              "BTTTriggerOnDown": 1,
+              "BTTLayoutIndependentChar": "RIGHT",
+              "BTTEnabled2": 1,
+              "BTTEnabled": 1,
+              "BTTShortcutKeyCode": 124,
+              "BTTShortcutAdvancedModifierKeys": "9437192",
+              "BTTShortcutModifierKeys": 9437184,
+              "BTTOrder": 202,
+              "BTTAutoAdaptToKeyboardLayout": 0,
+              "BTTNotes": "physical Option+Right (Karabiner on) = Maximize Window Right; macOS sees Cmd+Right (added 2026-11-06)"
             }
           ],
           "BTTAdditionalDataJSON": {

@@ -61,3 +61,9 @@
 ### Pending
 - Test forward delete mappings (draft profile deployed)
 - Known issues in `docs/current-issues.md` still open
+
+## 2026-11-06: BTT window keys for Folio
+
+- Physical Option+Up = Maximize Window (existing), Option+Left = Maximize Window Left, Option+Right = Maximize Window Right (new), with Karabiner's WinKeyMap on (macOS sees Cmd+arrows).
+- Physical Cmd+Up reaches Folio as Option+Up (up a folder). The old Option+Left/Right -> Cmd+Left/Right scripts stay; Folio now binds Cmd+Left/Right as back/forward.
+- Applied live via btt:// URL scheme; preset file edited to match. README has the table.

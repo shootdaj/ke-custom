@@ -419,3 +419,18 @@ This configuration is provided as-is for personal use. Modify as needed for your
 **🎉 Happy typing with your complete Windows muscle memory on Mac!** 
 
 *Now featuring 100% keyboard coverage - every single key works exactly as you'd expect from Windows!* 
+## BetterTouchTool window keys (2026-11-06)
+
+Global triggers in the BTT "Active" group (`btt/btt-preset.bttpreset`). Karabiner's WinKeyMap profile is on, so the
+physical Cmd key arrives as Option and the physical Option key as Cmd. The table is in physical keys.
+
+| You press | macOS sees | Does | BTT action |
+|---|---|---|---|
+| Option + Up | Cmd + Up | Maximize window | 21 Maximize Window (existing trigger) |
+| Option + Left | Cmd + Left | Dock window to the left half | 19 Maximize Window Left (new) |
+| Option + Right | Cmd + Right | Dock window to the right half | 20 Maximize Window Right (new) |
+| Cmd + Up | Option + Up | Reaches the app: Folio goes up a folder (Finder has its own BTT rule) | none |
+| Cmd + Left / Right | Option + Left / Right | The existing global script sends Cmd+Left / Cmd+Right to the front app (browser back/forward; Folio treats Cmd+Left/Right as back/forward) | 195 AppleScript (unchanged) |
+
+Applied live through BTT's URL scheme (`btt://update_trigger`, `btt://add_new_trigger`) and mirrored into the preset
+file by hand; `scripts/btt-export.sh` replaces the hand edit with BTT's own export.
