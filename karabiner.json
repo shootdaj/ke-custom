@@ -132,7 +132,7 @@
                                 "to": [
                                     {
                                         "key_code": "left_arrow",
-                                        "modifiers": ["option"]
+                                        "modifiers": ["right_option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -156,7 +156,7 @@
                                 "to": [
                                     {
                                         "key_code": "right_arrow",
-                                        "modifiers": ["option"]
+                                        "modifiers": ["right_option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -180,7 +180,7 @@
                                 "to": [
                                     {
                                         "key_code": "left_arrow",
-                                        "modifiers": ["option", "shift"]
+                                        "modifiers": ["right_option", "shift"]
                                     }
                                 ],
                                 "type": "basic"
@@ -204,7 +204,7 @@
                                 "to": [
                                     {
                                         "key_code": "right_arrow",
-                                        "modifiers": ["option", "shift"]
+                                        "modifiers": ["right_option", "shift"]
                                     }
                                 ],
                                 "type": "basic"
