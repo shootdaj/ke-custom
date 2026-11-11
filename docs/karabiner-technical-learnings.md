@@ -191,7 +191,7 @@ Low Priority Section:
   "to": [
     {
       "key_code": "left_arrow", 
-      "modifiers": ["option"]
+      "modifiers": ["right_option"]
     }
   ]
 }
@@ -269,6 +269,19 @@ Low Priority Section:
 **Final Solution:** Simple direct mapping `fn + Tab → Control + Tab`
 
 **Lesson:** Sometimes the simplest solution is best. Complex state management can introduce more problems than it solves.
+
+### **Example 3: Right Option Word Skip Caught by BTT (2026-11-12)**
+
+**Problem:** `Right Option + Left/Right Arrow` jumped to line start/end again instead of by word
+
+**Root Cause:** In `to.modifiers`, `option` is an alias of `left_option`. The word-skip rules sent
+`["option"]`, so Right Option + arrow came out as **Left** Option + arrow. BTT's left-Option-only
+triggers `8167AFB8` / `26FC0F7D` (Option + Left/Right → Cmd + Left/Right, with
+`BTTLeftRightModifierDifferentiation`) then caught it.
+
+**Solution:** word-skip and word-select rules send `["right_option"]` (`["right_option", "shift"]`).
+
+**Lesson:** When another tool tells left and right modifiers apart, name the side in `to`. Never send plain `"option"` from a Right Option rule.
 
 ## 🔧 **Debugging Techniques**
 
