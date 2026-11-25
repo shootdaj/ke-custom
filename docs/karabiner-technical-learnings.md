@@ -139,6 +139,13 @@ Always test functionality with **both Caps Lock states**:
 - Use proper linting
 - Ensure each key appears only once per object
 
+### **Problem: Variables reset on sleep/wake (Karabiner 16.2+)**
+- Karabiner 16.2+ restarts its device grabber every time the Mac wakes. All `set_variable` state goes back to 0.
+- Karabiner 15.x kept the grabber alive across sleep, so variables silently persisted for months. Do not rely on that.
+- There is **no** profile-level `"variables"` key for seeding initial values. Karabiner ignores unknown keys, so it looks like it works until something resets the variable.
+- Rule: design any on/off gate so that **unset (0) means the state you want after a restart**. Gate on `variable_unless some_flag == 1`, not `variable_if some_flag == 1`.
+- Full story: `2026-10-25-sleep-wake-toggle-fix.md`.
+
 ## 🛠️ **Best Practices**
 
 ### **1. Rule Organization Strategy**
