@@ -1,0 +1,44 @@
+{
+  "BTTPresetName" : "Warp Remote Paste",
+  "BTTPresetColor" : "41.697600, 100.669920, 148.920000, 255.000000",
+  "BTTPresetUUID" : "BAB0A081-A3E8-42CA-B505-E14F5B55DFF8",
+  "BTTPresetContent" : [
+    {
+      "BTTAppBundleIdentifier" : "dev.warp.Warp-Stable",
+      "BTTAppName" : "Warp",
+      "BTTAppAutoInvertIcon" : 1,
+      "BTTTriggers" : [
+        {
+          "BTTLastUpdatedAt" : 1794442131.5318041,
+          "BTTTriggerType" : 0,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTUUID" : "7A11C0DE-F0E5-4E70-9A57-000000000001",
+          "BTTShortcutKeyboardType" : 0,
+          "BTTTriggerOnDown" : 1,
+          "BTTLayoutIndependentChar" : "v",
+          "BTTEnabled" : 0,
+          "BTTEnabled2" : 0,
+          "BTTShortcutKeyCode" : 9,
+          "BTTShortcutModifierKeys" : 1048576,
+          "BTTOrder" : 0,
+          "BTTAutoAdaptToKeyboardLayout" : 0,
+          "BTTActionsToExecute" : [
+            {
+              "BTTLastUpdatedAt" : 1794443313.8476119,
+              "BTTTriggerParentUUID" : "7A11C0DE-F0E5-4E70-9A57-000000000001",
+              "BTTIsPureAction" : true,
+              "BTTUUID" : "7A11C0DE-F0E5-4E70-9A57-000000000002",
+              "BTTPredefinedActionType" : 195,
+              "BTTPredefinedActionName" : "Run Apple Script (async in background)",
+              "BTTInlineAppleScript" : "-- Runs alongside the real Cmd+V (sent by Karabiner). Never pastes anything itself.\n-- Image-only clipboard -> remote-paste --focused, which acts only if an Ultra tmux window has focus.\nset hasImage to false\nset hasText to false\ntry\n\trepeat with i in (clipboard info)\n\t\tset c to (item 1 of i) as text\n\t\tif c contains \"PNGf\" or c contains \"TIFF\" or c contains \"JPEG\" or c contains \"GIF\" then set hasImage to true\n\t\tif c is \"string\" or c is \"Unicode text\" or c contains \"utf8\" or c contains \"ut16\" then set hasText to true\n\tend repeat\nend try\nset go to (hasImage and (not hasText))\ndo shell script \"echo \\\"$(date '+%F %T') image=\" & hasImage & \" text=\" & hasText & \" ran_remote_paste=\" & go & \"\\\" >> $HOME/Library/Logs/warp-remote-paste.log\"\nif go then do shell script \"/Users/anshul/remote-paste --focused > /dev/null 2>&1 &\"\n",
+              "BTTOrder" : 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "BTTPresetSnapAreas" : [
+
+  ]
+}

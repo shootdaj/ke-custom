@@ -192,6 +192,20 @@ To avoid collisions with fn-based word navigation:
 
 This keeps universal Back/Forward on Command (remapped to Left Option) while fn-based word navigation remains unaffected and uses macOS’s native key repeat.
 
+### Warp: fn + V Sends Images to the Mac Ultra
+In Warp, `fn + V` still sends the normal `Cmd + V`. The rule also runs BTT's
+"Warp Remote Paste" action in the background (`btt/warp-remote-paste.bttpreset`,
+key shortcut disabled; Karabiner calls it by URL). If the clipboard holds only an
+image, it runs `~/remote-paste --focused`, which uploads the image to the Ultra
+and pastes its path into the Ultra tmux window that has focus. It never sends or
+replaces a paste itself.
+
+- Needs `~/remote-paste` on the MacBook and `set -g focus-events on` in the
+  Ultra's `~/.tmux.conf` (tmux sessions attached before that need a reattach).
+- Log: `~/Library/Logs/warp-remote-paste.log`.
+- Raycast `fn + Shift + V` is not covered: its paste is a synthetic key that
+  neither Karabiner nor BTT sees.
+
 ## Complete Shortcuts Reference
 
 ### **Core Productivity (Works Everywhere)**

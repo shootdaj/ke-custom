@@ -4,6 +4,42 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Warp: fn + V pastes as normal and also sends clipboard images to the focused Ultra window",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": ["^dev\\.warp\\.Warp-Stable$"],
+                                        "type": "frontmost_application_if"
+                                    },
+                                    {
+                                        "name": "windows_mapping_disabled",
+                                        "type": "variable_unless",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "fn + V in Warp: Cmd+V plus BTT remote image check",
+                                "from": {
+                                    "key_code": "v",
+                                    "modifiers": {
+                                        "mandatory": ["fn"],
+                                        "optional": ["caps_lock"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "v",
+                                        "modifiers": ["command"]
+                                    },
+                                    {
+                                        "shell_command": "/usr/bin/open -g 'btt://execute_assigned_actions_for_trigger/?uuid=7A11C0DE-F0E5-4E70-9A57-000000000001'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Windows-to-Mac: System toggle controls",
                         "manipulators": [
                             {
